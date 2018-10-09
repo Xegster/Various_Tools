@@ -1,0 +1,1196 @@
+[4/13/2017 11:03:44 AM] Gomez: I know you just got here, but do yyou want to join us for thai?
+[4/13/2017 11:09:06 AM] Gomez: I guess that is what you were talking about, lol.
+[4/13/2017 11:12:19 AM] Rodger Sherman: yes indeed it is
+[4/13/2017 11:23:15 AM] Gomez: so, I would end up doing something like this?
+[4/13/2017 11:23:16 AM] Gomez: var gpsFileInfo = new GPSFileInfo(filePath);
+         var uploadableGPSFileInfo = gpsFileInfo as Uploadable;
+                        foreach(var jur in juris) {
+                            uploadableGPSFileInfo.AddJurisdictionalData(jur.ID, jur.Name);
+                        }
+                        foreach(var c in components) {
+                            uploadableGPSFileInfo.AddSubmissionData(c.ID, c.IDNumber, c.FileNumber);
+                        }
+         dir.EntriesToProcess.Add( new GPSFileInfo( filePath ) );
+[4/13/2017 11:25:34 AM] Rodger Sherman: one - I'd double check that you have to explicitly cast it to Uploadable
+[4/13/2017 11:25:58 AM] Gomez: var uploadableGPSFileInfo = gpsFileInfo as Uploadable;
+[4/13/2017 11:26:08 AM] Rodger Sherman: two - even if you do need to cast it to Uploadable, then you could just write
+[4/13/2017 11:26:28 AM] Rodger Sherman: ((Uploadable)gpsFileInfo).AddJurisdictionalData(...)
+[4/13/2017 11:26:38 AM] Rodger Sherman: three - c.ID better be the keytbl
+[4/13/2017 11:26:44 AM] Gomez: why not
+[4/13/2017 11:26:50 AM] Gomez: got it, got it, got it
+[4/17/2017 11:14:13 AM] Gomez: well, last night was kinda dissapointing
+[4/17/2017 11:15:05 AM] Rodger Sherman: lol
+[4/17/2017 11:15:08 AM] Rodger Sherman: had a date?
+[4/17/2017 11:15:13 AM] Gomez: yeah
+[4/17/2017 11:15:50 AM] Rodger Sherman: didnt' lay the pipe?
+[4/17/2017 11:15:51 AM] Rodger Sherman: lol
+[4/17/2017 11:18:17 AM] Gomez: I actually did. that was the disappointing part, lol
+[4/17/2017 11:18:28 AM] Rodger Sherman: oh fuck off then
+[4/17/2017 11:18:29 AM] Rodger Sherman: lol
+[4/17/2017 11:18:43 AM] Gomez: lol.
+[4/17/2017 4:35:29 PM] Rodger Sherman: That's what I did today instead of working lol
+[4/17/2017 4:35:44 PM] Rodger Sherman: hyou can steal it to swoon one of your many dates if you want
+[4/17/2017 4:35:45 PM] Rodger Sherman: lol
+[4/17/2017 4:36:02 PM] Gomez: lol, I am totally going to steal it
+[4/17/2017 4:36:13 PM] Gomez: I am so fucked everything is fucked
+[4/17/2017 4:36:32 PM] Rodger Sherman: uhoh
+[4/17/2017 4:36:34 PM] Rodger Sherman: what why
+[4/17/2017 4:37:16 PM] Gomez: I dont want to say it beucase the next thing is ggoing to come out of your mouth is "I was right"
+[4/17/2017 4:37:45 PM] Gomez: I think the guys that setup the web api messed up the setup for the fuwutil libraries
+[4/17/2017 4:37:50 PM] Rodger Sherman: lololol
+[4/17/2017 4:37:55 PM] Rodger Sherman: say it
+[4/17/2017 4:38:00 PM] Gomez: no!
+[4/17/2017 4:38:02 PM] Rodger Sherman: I already know I'm usually right
+[4/17/2017 4:38:08 PM] Gomez: fuck you
+[4/17/2017 4:38:43 PM] Gomez: so anyways, this chick, from last night. she left a lot to desire, plus she is not the cutest out there, but I was kinda upset
+[4/17/2017 4:38:52 PM] Rodger Sherman: why were you upset
+[4/17/2017 4:41:00 PM] Gomez: well, she kinda did a bad job in bed, she came like 4 times, and she could barely made me cum once. I was like wtf... and now you are leaving... of course this was after like 2 hours, lol
+[4/17/2017 4:41:23 PM] Rodger Sherman: I can't think of a lamer reason to be upset
+[4/17/2017 4:42:40 PM] Gomez: are you kidding me! I think if she comes that many times at least I should get half of them, or what are the fucking rules about this game?
+[4/17/2017 4:42:43 PM] Gomez: lol
+[4/17/2017 4:42:59 PM] Rodger Sherman: uhhhh it's physically impossible for men to cum at the same rate women can/do
+[4/17/2017 4:43:34 PM] Gomez: there have been women that have been able to do that. that asian Chick, damn it we need to go to texas, lol.
+[4/17/2017 4:43:42 PM] Rodger Sherman: I said at the same rate
+[4/17/2017 4:43:52 PM] Rodger Sherman: I do not believe for one second you could come 25+ times in an hour
+[4/17/2017 4:44:03 PM] Gomez: lol
+[4/17/2017 4:44:19 PM] Gomez: no, but 2-4 in 2 hours yeah
+[4/17/2017 4:44:34 PM] Rodger Sherman: still, your expectations are unreasonably high
+[4/17/2017 4:44:49 PM] Rodger Sherman: where is the "I was right" moment?
+[4/17/2017 4:45:18 PM] Gomez: fuck it, whatever I guess you might be right on this one, but like I said, I know for a fact is not impossible...
+[4/17/2017 4:45:23 PM] Gomez: fuck you, I will not say it
+[4/17/2017 4:45:43 PM] Rodger Sherman: it IS impossible to cum at teh SAME RATE as women
+[4/17/2017 4:45:57 PM] Rodger Sherman: and if you disagree, well, you aren't doin it right
+[4/17/2017 4:46:03 PM] Gomez: yes it is, I am not saying that. but more than once in a 2 hour period is possible
+[4/17/2017 4:46:08 PM] Gomez: lol
+[4/17/2017 4:46:30 PM] Rodger Sherman: lol @ 'more than once in 2 hours' when women can cum 50+ times in that same time frame
+[4/17/2017 4:46:44 PM] Rodger Sherman: like, 25/hour is on hte low side
+[4/17/2017 4:46:49 PM] Rodger Sherman: ANYWAYS
+[4/17/2017 4:46:55 PM] Rodger Sherman: say the I was right moment
+[4/17/2017 4:47:21 PM | Removed 4:47:52 PM] Gomez: This message has been removed.
+[4/17/2017 4:47:46 PM] Gomez: and now is getting deleted
+[4/17/2017 4:48:00 PM] Gomez: I dont want people to know I said that
+[4/17/2017 4:48:02 PM] Rodger Sherman: I already saw you said I was right
+[4/17/2017 4:48:06 PM] Gomez: lol
+[4/17/2017 4:48:10 PM] Rodger Sherman: but I have no idea what I was right about
+[4/17/2017 4:49:53 PM] Gomez: I think the subrepos got messed up. but I am not 100% sure
+[4/17/2017 4:49:59 PM] Rodger Sherman: lol
+[4/17/2017 5:11:31 PM] Gomez: did you know that Kale is traveling?
+[4/17/2017 5:11:37 PM] Rodger Sherman: yersd
+[4/17/2017 5:11:38 PM] Rodger Sherman: tes
+[4/17/2017 5:11:39 PM] Rodger Sherman: yes
+[4/17/2017 5:11:43 PM] Gomez: lawl
+[4/17/2017 5:11:49 PM] Gomez: where is he going?
+[4/17/2017 5:17:13 PM] Rodger Sherman: NJ
+[4/17/2017 5:18:22 PM] Gomez: I bet he is firing someone, lol.
+[4/17/2017 5:31:00 PM] Rodger Sherman: http://now44news.co/?p=6387
+[4/17/2017 5:34:39 PM] Gomez: lol, is that for real?
+[4/17/2017 5:34:52 PM] Gomez: people are actually commenting on that article
+[4/17/2017 5:34:59 PM] Rodger Sherman: lol
+[4/17/2017 5:35:07 PM] Gomez: wtf
+[4/17/2017 5:35:09 PM] Rodger Sherman: it was relevant to our earlier conversation
+[4/17/2017 5:35:15 PM] Gomez: yes, yes it was
+[4/17/2017 5:35:27 PM] Gomez: but still, whatever
+[4/17/2017 5:35:41 PM] Rodger Sherman: I can't think of a happier way to die tho
+[4/17/2017 5:35:57 PM] Gomez: yeah, that is true. well, having sex would be better way to die
+[4/17/2017 5:37:03 PM] Gomez: http://now44news.co/?p=5971
+[4/17/2017 5:37:07 PM] Gomez: that actually makes sense
+[4/17/2017 5:37:20 PM] Gomez: lol
+[4/17/2017 5:37:38 PM] Rodger Sherman: lol
+[4/17/2017 6:13:24 PM] Gomez: za is autralia, right?
+[4/17/2017 6:13:30 PM] Gomez: F:\Public\ZA
+[4/17/2017 6:13:32 PM] Rodger Sherman: africa
+[4/17/2017 6:13:41 PM] Gomez: I thought that was SA
+[4/17/2017 6:13:48 PM] Rodger Sherman: SA is south australia
+[4/17/2017 6:13:54 PM] Rodger Sherman: which I think is Adelaide
+[4/17/2017 6:14:01 PM] Rodger Sherman: trLaboratories answers these questions for you btw
+[4/17/2017 6:14:31 PM] Rodger Sherman: location name
+NJ New Jersey , GLI HQs
+CO Colorado, GLI West
+EU Netherlands, GLI Europe
+ZA South Africa, SABS
+SA South Australia
+ME Melbourne
+NS New South Wales
+LV Las Vegas
+IL Italy
+ZZ Temporary Location
+AT Austria
+AG Argentina
+MX Mexico
+MA Macau/Macao
+VN Vancouver
+UK London
+ES Spain
+MH Moncton
+SJ SAJ
+MS Mississippi
+[4/17/2017 6:37:19 PM] Gomez: damn it Nick didnt create the jira issues for staging
+[4/18/2017 10:08:14 AM] Gomez: Damn it Nick really is not giving a fuck about anything
+[4/18/2017 11:02:10 AM] Rodger Sherman: He never fuckin does, it's very frustrating
+[4/18/2017 11:02:19 AM] Rodger Sherman: Luckily Harley didn't escape..
+[4/18/2017 11:04:41 AM] Gomez: wtf
+[4/18/2017 11:05:00 AM] Gomez: I will tie that door when I get home, sorry dude, you dont have to deal with that shit
+[4/18/2017 11:18:03 AM] Rodger Sherman: I don't mind bruh
+[4/18/2017 11:18:17 AM] Rodger Sherman: Just worried about your doggo
+[4/18/2017 11:29:43 AM] Gomez: yeah, he has done that in the past, he never leaves the house, but yeah I usually tie the door together with something to avoid this
+[4/18/2017 1:36:28 PM] Gomez: so, is that a bad thing?
+[4/18/2017 1:36:41 PM] Gomez: I mean is good that her status shows that, right?
+[4/18/2017 1:36:43 PM] Rodger Sherman: lawl I wasn't sure I wanted a whole lot of people to know
+[4/18/2017 1:36:53 PM] Gomez: you are a man you should be allowed to continue dating while she is waiting for you
+[4/18/2017 1:36:58 PM] Rodger Sherman: my status alsos hows that, but my privacy is set to very limited
+[4/18/2017 1:37:11 PM] Rodger Sherman: uh, no, I don't want either of us fooling around
+[4/18/2017 1:37:12 PM] Gomez: oh, lol
+[4/18/2017 1:37:20 PM] Gomez: such a gentleman
+[4/18/2017 1:37:30 PM] Rodger Sherman: uhh loyalty is a basic thing
+[4/18/2017 1:37:32 PM] Rodger Sherman: lol
+[4/18/2017 1:37:53 PM] Gomez: is it?
+[4/18/2017 1:38:01 PM] Gomez: lol
+[4/18/2017 1:38:07 PM] Rodger Sherman: yes
+[4/18/2017 1:38:10 PM] Rodger Sherman: lol
+[4/19/2017 11:03:35 AM] Rodger Sherman: nigga you been doin coke
+[4/19/2017 11:03:37 AM] Rodger Sherman: what's with the sniffles
+[4/19/2017 11:05:20 AM] Gomez: lol, allergies
+[4/19/2017 11:05:24 AM] Gomez: I need to get my shit for it
+[4/19/2017 11:05:53 AM] Gomez: why do you think I have a box of tissues everywhere in the house and at my desk. you bastard
+[4/19/2017 11:06:33 AM] Rodger Sherman: for masturbating, duh
+[4/19/2017 11:06:53 AM] Gomez: well, besides that. plsu masturbation I only do it in one place, your room ;)
+[4/19/2017 11:07:00 AM] Gomez: and dont need tissues there
+[4/19/2017 11:22:14 AM] Gomez: what time is the show? suicidegirls
+[4/19/2017 11:22:31 AM] Gomez: or whatever it isshow, demostractions, walk around place, etc.
+[4/19/2017 11:25:40 AM] Rodger Sherman: the show is at 9, doors at 8
+[4/19/2017 11:25:46 AM] Rodger Sherman: Jake's comin with me to that but DJ bailed
+[4/19/2017 11:25:53 AM] Rodger Sherman: and I have no one to go tot eh capitol with
+[4/19/2017 11:28:11 AM] Gomez: if I did it I would go with you, but I think on that one I am going to feel really out of place as the only one not doing it. if Jake is coming with you to suicide girls I wont go then, it sounds like a great show, but hours make it a little bit difficult with the kids and find a babysitter.
+[4/19/2017 11:28:27 AM] Rodger Sherman: I figured
+[4/19/2017 11:29:40 AM] Gomez: tell me how it goes, maybe next time they come I ll go
+[4/20/2017 9:31:13 AM] Gomez: fine, I will not say anything anymore...
+[4/20/2017 9:31:56 AM] Rodger Sherman: lol
+[4/20/2017 9:32:01 AM] Rodger Sherman: I'm just a lil paranoid about it otday
+[4/20/2017 9:32:07 AM] Gomez: I wonder why?
+[4/20/2017 9:32:07 AM] Rodger Sherman: every other day I've not given a fuck
+[4/20/2017 9:32:10 AM] Rodger Sherman: I don't
+[4/20/2017 9:32:32 AM] Gomez: yeah, that is what threw me off, any other time of the year you dont give a fguck about it
+[4/20/2017 12:15:04 PM] Rodger Sherman: I have packages coming from Amazon btw
+[4/20/2017 12:46:04 PM] Gomez: sounds good
+[4/20/2017 12:46:17 PM] Gomez: I fucked up the database today.
+[4/20/2017 12:46:22 PM] Gomez: only 500k objects
+[4/20/2017 1:25:37 PM] Rodger Sherman: oh I think I convinced bella to like me btw
+[4/20/2017 1:27:40 PM] Gomez: lol, what di you do to her?
+[4/20/2017 1:27:45 PM] Rodger Sherman: nothin
+[4/20/2017 1:27:52 PM] Rodger Sherman: but she comes in my room and gets on my bed and shit now
+[4/20/2017 1:28:02 PM] Gomez: lol, she is a nice cat.
+[4/20/2017 1:28:14 PM] Gomez: she does the same with the kids, with me if there is no one else around.
+[4/20/2017 1:29:47 PM] Gomez: I hate myself today, I hate my code, fuck I really wish I didnt fuck up this morning
+[4/20/2017 1:30:08 PM] Rodger Sherman: lame
+[4/20/2017 1:30:11 PM] Rodger Sherman: what'd you do
+[4/20/2017 1:30:14 PM] Rodger Sherman: why don't youb ack shit up
+[4/20/2017 1:30:35 PM] Gomez: it was back up from last night, but still I really hate when I end up fucking things up
+[4/20/2017 1:30:54 PM] Rodger Sherman: heyyyy me too
+[4/20/2017 1:31:28 PM] Gomez: in my sort of defense before i ran it , I check with Kale and he thought it looked good.
+[4/20/2017 1:31:38 PM] Rodger Sherman: lawl
+[4/20/2017 1:38:01 PM] Gomez: I know, so I have been hitting it off with this girl from OKC, I asked her out she is like sure but I only can on Mondays or Tuesday, the rest of the time I am on call.
+[4/20/2017 1:38:14 PM] Rodger Sherman: lawl
+[4/20/2017 1:38:32 PM] Gomez: lol, yeah that was my first thought
+[4/20/2017 1:39:17 PM] Gomez: but when she said that I am like I dont think she read all of my profile. so I had to tell her that I have kids, that is on my profile too. she hasnt responded yet... :(
+[4/20/2017 1:40:16 PM] Rodger Sherman: well, if you said monday/tuesday wouldn't work for you, it's likely that's the end
+[4/20/2017 1:41:28 PM] Gomez: well I didnt tell her that, that I could do Monday probably, but I had to tell her about the kids situation, I told you that whenever I go out on a date before that I tell them I have kids, specially if I have them as often as I have them right now, they will noticed I am not that available
+[4/20/2017 1:43:57 PM] Rodger Sherman: it's on your profile
+[4/20/2017 1:44:00 PM] Rodger Sherman: her fault for not reading
+[4/20/2017 1:44:30 PM] Gomez: exactly. I know but still, lol.
+[4/21/2017 12:15:36 PM] Rodger Sherman: Ashley signed up for a Suicide Girls photo shoot
+[4/21/2017 12:15:37 PM] Rodger Sherman: lol
+[4/21/2017 12:16:03 PM] Gomez: lol,
+[4/21/2017 12:16:28 PM] Gomez: how are you guys communicating if she can send you messages through facbook
+[4/21/2017 12:16:39 PM] Rodger Sherman: I hve multiple accounts
+[4/21/2017 12:16:40 PM] Rodger Sherman: duh
+[4/21/2017 12:17:31 PM] Gomez: then goes back to why didnt you use your fake account to post the go killyourself message, lol
+[4/21/2017 12:20:53 PM] Rodger Sherman: because I had been getting away with light trolling for a long itme
+[4/21/2017 12:21:24 PM] Gomez: lol
+[4/21/2017 12:34:08 PM] Rodger Sherman: bruh I'm actually hung over
+[4/21/2017 12:34:12 PM] Rodger Sherman: that is not supposed to happen
+[4/21/2017 12:34:53 PM] Gomez: lol, overUsed, yesterday?
+[4/21/2017 12:35:04 PM] Rodger Sherman: yes
+[4/21/2017 12:35:51 PM] Gomez: lol, you are not that young anymore Rodger...
+[4/21/2017 12:37:06 PM] Rodger Sherman: naw
+[4/21/2017 12:37:10 PM] Rodger Sherman: it's that I don't smoke that much anymore
+[4/21/2017 12:37:11 PM] Rodger Sherman: lol
+[4/21/2017 12:44:16 PM] Gomez: System.Data.Entity.Core.EntityException: The underlying provider failed on Open. ---> System.Data.SqlClient.SqlException: Cannot open database "GPS" requested by the login. The login failed.
+Login failed for user 'GAMINGLABS\daniel_go'.
+[4/21/2017 12:45:54 PM] Rodger Sherman: yeah I'm goign to transfer most of my shit to my tablet and factory reset this phone
+[4/21/2017 12:45:57 PM] Rodger Sherman: this is rediculous
+[4/21/2017 12:46:07 PM] Rodger Sherman: why do I always spell that word with an E
+[4/21/2017 12:46:09 PM] Rodger Sherman: I'm terrible
+[4/21/2017 12:46:10 PM] Gomez: what is happening?
+[4/21/2017 12:46:39 PM] Gomez: lol, you are talking to me, my eyes translate all the misspelilings
+[4/21/2017 12:49:38 PM] Rodger Sherman: 303 524 2649
+[4/21/2017 12:50:10 PM] Rodger Sherman: Ignore that
+[4/21/2017 12:50:11 PM] Gomez: what do you want me to do?
+[4/21/2017 12:50:13 PM] Gomez: ok
+[4/21/2017 1:14:35 PM] Gomez: the pizza is really good, the salad, is actually nice
+[4/21/2017 1:14:47 PM] Rodger Sherman: yeah I just ate tho
+[4/21/2017 1:14:53 PM] Gomez: oh yeah.
+[4/21/2017 1:25:58 PM] Gomez: can you come over for a minute?
+[4/21/2017 1:32:53 PM] Gomez: I dont want to complain too much, just because I know it bothers you too, but I fucking hate when kale asks me about you if you are here and shit like that...
+[4/21/2017 1:33:26 PM] Rodger Sherman: tell him next time to fucking skype, text, or email me
+[4/21/2017 1:33:31 PM] Rodger Sherman: and to leave you hte fuck alone about it
+[4/21/2017 1:34:01 PM] Gomez: lol, yeah that is why I dont want to complain too much...
+[4/21/2017 1:36:10 PM] Rodger Sherman: I'm serious, if he wants to know where I am just fuckin ask
+[4/21/2017 2:00:27 PM] Gomez: Dude, fucking awesome. thanks
+[4/21/2017 2:00:37 PM] Gomez: I will need to make a couple of changes, but it works, and i love it
+[4/21/2017 2:01:03 PM] Rodger Sherman: got it all uploading?
+[4/21/2017 2:01:10 PM] Rodger Sherman: I'm bothered that it defaults to .NONE
+[4/21/2017 2:06:59 PM] Rodger Sherman: I fucking hate Nick's code
+[4/21/2017 2:07:03 PM] Rodger Sherman: I wish I'd never let him fuck up GPS
+[4/21/2017 2:07:06 PM] Rodger Sherman: godfuckingdammit
+[4/21/2017 2:09:11 PM] Gomez: are you robert smith, nice touch
+[4/21/2017 2:10:34 PM] Rodger Sherman: yes I am
+[4/21/2017 2:11:59 PM] Rodger Sherman: I pushed my change to GPS
+[4/21/2017 2:12:15 PM] Rodger Sherman: please drop the .ACtion = fjdkladfjla line I added
+[4/21/2017 2:12:17 PM] Rodger Sherman: then please do this
+[4/21/2017 2:12:27 PM] Rodger Sherman: upload a file X.txt with your code
+[4/21/2017 2:12:33 PM] Rodger Sherman: modify the contents of x.txt and upload it again
+[4/21/2017 2:12:38 PM] Rodger Sherman: tell me if it versions the fiel
+[4/21/2017 2:12:53 PM] Gomez: alright
+[4/21/2017 2:16:18 PM] Rodger Sherman: I think I"m giong to go home and veg out
+[4/21/2017 2:16:24 PM] Rodger Sherman: I'm not functioning very well
+[4/21/2017 2:17:05 PM] Gomez: yeah, I want to leave right now too to be honest
+[4/21/2017 2:17:27 PM] Gomez: I still need to do a long as drive again, and then again tomorrow morning
+[4/21/2017 2:17:33 PM] Rodger Sherman: ew
+[4/21/2017 2:21:21 PM] Gomez: it works
+[4/21/2017 2:33:02 PM] Rodger Sherman: and it versions it?
+[4/21/2017 2:36:47 PM] Gomez: what do you mean by versions?
+[4/21/2017 2:37:08 PM] Rodger Sherman: did it actuallyu upload hte modified copy
+[4/21/2017 2:37:14 PM] Rodger Sherman: and set the old one to deprecated
+[4/21/2017 2:37:19 PM] Gomez: ahvent tried that yet, let me try
+[4/21/2017 2:37:27 PM] Rodger Sherman: that's why I said:
+[4/21/2017 2:37:31 PM] Rodger Sherman: modify the contents of x.txt and upload it again
+[4/21/2017 2:43:09 PM] Gomez: yeah, it works
+[4/21/2017 2:47:16 PM] Rodger Sherman: thanks
+[4/24/2017 2:05:19 PM] Rodger Sherman: you said you had a query for negation logic?
+[4/24/2017 2:08:14 PM] Gomez: oh, yeah. well sort of. let me get it
+[4/24/2017 2:09:14 PM] Gomez: this works for exactly in
+[4/24/2017 2:09:16 PM] Gomez: var query = String.Format("Select qb.ID from QuestionBase qb " +
+                                                  "inner join ClauseValidationJoin cvj " +
+                                                  "on cvj.questionID = qb.ID " +
+                                                  "inner join Clause c " +
+                                                  "on c.ID = cvj.clauseID " +
+                                                  "inner join ClauseDocumentJoin cdj " +
+                                                  "on cdj.clauseID = c.ID " +
+                                                  "inner join Document d " +
+                                                  "on d.ID = cdj.docID " +
+                                                  "inner join DocumentJuriJoin djj " +
+                                                  "on djj.DocumentID = d.ID " +
+                                                  "where cvj.State = 1 " +
+                                                  "and c.State = 2 " +
+                                                  "and cdj.State = 1 " +
+                                                  "and d.Inactive != 1 " +
+                                                  "and djj.State = 1 " +
+                                                  "and djj.JurisdictionID in ({0}) " +
+                                                  "and qb.ID in ('{1}') " +
+                                                  "group by qb.ID " +
+                                                  "having Count(Distinct djj.JurisdictionID) = {2} ", 
+                                                  String.Join(",", juriIDs),
+                                                  String.Join("','", childrenQs.ToList()),
+                                                  juriIDs.Count);
+[4/24/2017 2:09:24 PM] Gomez: I guess negating that could help you
+[4/24/2017 2:12:22 PM] Rodger Sherman: ugh
+[4/24/2017 2:12:23 PM] Rodger Sherman: see
+[4/24/2017 2:12:28 PM] Rodger Sherman: you made the same mistake I almost did
+[4/24/2017 2:12:31 PM] Rodger Sherman: you only check hte count
+[4/24/2017 2:12:42 PM] Rodger Sherman: not that one is a proper subset of the other
+[4/24/2017 2:36:49 PM] Rodger Sherman: also, I saw the 'having' clause and I couldn't make it work in InfoPath land
+[4/24/2017 3:00:24 PM] Gomez: Oh, yeah that sucks, i guess the current logic you have will have to do it for now
+[4/24/2017 3:00:57 PM] Gomez: Dude, so, Asian girl from Texas just contacted me
+[4/24/2017 3:06:35 PM] Rodger Sherman: And?
+[4/24/2017 3:16:42 PM] Gomez: Part of me wants to do another trip to Texas, lol
+[4/24/2017 8:14:29 PM] Rodger Sherman: We have to talk about NVT tomorrow
+[4/24/2017 8:14:48 PM] Rodger Sherman: We'd discussed the fact that Compliance is notified when they fuck with Validations used by NVT, right?
+[4/24/2017 8:15:06 PM] Rodger Sherman: and then TCM will modify the content of the NVT tables appropriately if they fuck with a validation, right?
+[4/24/2017 8:15:14 PM] Rodger Sherman: Well, that may not be enough
+[4/24/2017 8:15:21 PM] Rodger Sherman: we'll chat tomorrow
+[4/25/2017 11:12:57 AM] Rodger Sherman: I'd also like you to explain how you hti breakpoints in eVo while in Release!?!?
+[4/25/2017 12:14:48 PM] Gomez: Why not.
+[4/25/2017 12:15:04 PM] Gomez: I am a sick person.
+[4/25/2017 12:15:17 PM] Rodger Sherman: if you're sick then get fof skype
+[4/25/2017 12:15:18 PM] Rodger Sherman: lol
+[4/25/2017 1:08:16 PM] Gomez: Never too sick to Skype
+[4/25/2017 8:22:39 PM] Rodger Sherman: I like how you were too sick to answer any of my questions tho ;)
+[5/1/2017 1:02:22 PM] Gomez: I am scared of what Nick and Mike next review...
+[5/1/2017 1:04:23 PM] Gomez: btw, the salads were an amazing idea, never been happier than just eating my own made salad
+[5/1/2017 1:04:34 PM] Rodger Sherman: lol
+[5/1/2017 1:04:38 PM] Rodger Sherman: you should copy me and get these containers
+[5/1/2017 1:04:40 PM] Rodger Sherman: they are great
+[5/1/2017 1:04:44 PM] Rodger Sherman: and what about their next review?
+[5/1/2017 1:04:51 PM] Gomez: code review
+[5/1/2017 1:04:57 PM] Gomez: I feel they are going to fuck up big time
+[5/1/2017 1:05:19 PM] Rodger Sherman: no shit
+[5/1/2017 4:46:00 PM] Rodger Sherman: We have to talk about NVT tomorrow
+We'd discussed the fact that Compliance is notified when they fuck with Validations used by NVT, right?
+and then TCM will modify the content of the NVT tables appropriately if they fuck with a validation, right?
+Well, that may not be enough
+we'll chat tomorrow
+I'd also like you to explain how you hti breakpoints in eVo while in Release!?!?
+[5/1/2017 5:31:04 PM] Gomez: Lol, we kinda talk about it before you came to the meeting
+[5/1/2017 5:34:54 PM] Rodger Sherman: well that didn't do me any good
+[5/2/2017 11:58:25 AM] Rodger Sherman: let's talk about htis
+[5/2/2017 11:58:28 AM] Rodger Sherman: come over
+[5/2/2017 12:00:41 PM] Gomez: ok?
+[5/2/2017 1:04:59 PM] Gomez: I spend 5 fucking hours doing nothing. what the fuck!
+[5/2/2017 1:06:01 PM] Gomez: between helping Nick and Mike, fixing the repo and talking to Kale, I am barely finishing the publishin gof Evo with its release notes, WTF. I really feel I have to hold Nick's and Mike's hand on anything they do on Evo
+[5/2/2017 1:07:21 PM] Rodger Sherman: lololol
+[5/2/2017 1:07:25 PM] Rodger Sherman: yes you do
+[5/2/2017 1:07:31 PM] Rodger Sherman: and I wish I could say you don't always
+[5/2/2017 1:07:41 PM] Rodger Sherman: but it would seem everys ingle itme I leave them to their own devices they fuck everything up
+[5/2/2017 1:07:45 PM] Rodger Sherman: Nick more than Mike
+[5/2/2017 1:08:31 PM] Gomez: well, in my case they are equal, Mike hasnt worked that much on Evo and fucked up my repo, lol.
+[5/2/2017 1:10:26 PM] Rodger Sherman: how did he break the repo exactly
+[5/2/2017 1:10:54 PM] Gomez: well, he merged into the wrong branch, and he couldnt just reverse the commit
+[5/2/2017 1:11:09 PM] Rodger Sherman: lololololololololololol
+[5/2/2017 1:11:10 PM] Rodger Sherman: omg
+[5/2/2017 1:11:11 PM] Rodger Sherman: lol
+[5/2/2017 1:11:19 PM] Rodger Sherman: This is why I whine about branches ;)
+[5/2/2017 1:11:25 PM] Gomez: so I have to do some branch off the previous commit, merge into the new branch ignore the changes from the merge and push
+[5/2/2017 1:11:29 PM] Gomez: lol
+[5/2/2017 1:11:31 PM] Gomez: shut up
+[5/2/2017 1:11:59 PM] Gomez: exactly, I asked him to fix and close hi branches, and he just make a meess on his own branches
+[5/2/2017 1:12:07 PM] Gomez: nothing related to the other branches, lol
+[5/2/2017 1:12:16 PM] Rodger Sherman: wait
+[5/2/2017 1:12:18 PM] Rodger Sherman: what?
+[5/2/2017 1:13:28 PM] Gomez: he needed to close his branches
+[5/2/2017 1:15:36 PM] Rodger Sherman: Did you really publish to staging from a random branch!? Bad gomez!
+[5/2/2017 1:16:13 PM] Gomez: I know, but that is how it has been done for a while, we used to have that branch and then it was decided to just kill it
+[5/3/2017 6:55:20 AM] Gomez: flobots on june 10th? in or out?
+[5/3/2017 9:38:33 AM] Rodger Sherman: Ugh probably in
+[5/3/2017 9:38:49 AM] Gomez: lol, ok. I got you a ticket already :)
+[5/3/2017 9:39:07 AM] Gomez: they are actually really cheap, less than 20
+[5/3/2017 9:40:22 AM] Rodger Sherman: Perfect
+[5/3/2017 11:51:55 AM] Rodger Sherman: http://njdev01/jira/browse/TM-594
+[5/3/2017 11:52:59 AM] Gomez: thanks
+[5/3/2017 11:53:17 AM] Gomez: is that the one you were talking about on the other group chat, that you missed everything on it
+[5/3/2017 11:53:26 AM] Gomez: or that jira made you redo it
+[5/3/2017 5:15:40 PM] Rodger Sherman: yes it is the one I had to rewrite
+[5/3/2017 5:15:49 PM] Rodger Sherman: Skype never gave me a notificaiton for your messages
+[5/3/2017 5:17:08 PM] Rodger Sherman: btw. I fuckin hate y'all's sql queries
+[5/4/2017 7:10:34 AM] Gomez: I love you too man, hey do you want to ask Jake if he wants to come to the flobots concert?
+[5/4/2017 7:35:42 AM] Rodger Sherman: I will do that
+[5/4/2017 10:30:01 AM] Rodger Sherman: I didn't know you leave the kids home alone some times?
+[5/4/2017 10:30:12 AM] Rodger Sherman: and Jake is going to the Texas Rammstein show
+[5/4/2017 10:34:06 AM] Rodger Sherman: uhh maybe not
+[5/4/2017 10:34:09 AM] Rodger Sherman: we'll see about Jake
+[5/4/2017 10:43:03 AM] Gomez: ok, hold on. I never leave them alone dude
+[5/4/2017 10:43:05 AM] Gomez: never
+[5/4/2017 10:43:13 AM] Rodger Sherman: who was there this mornign!?
+[5/4/2017 10:43:20 AM] Gomez: Gicelle was there this morning, way before i left
+[5/4/2017 10:43:29 AM] Rodger Sherman: did she not park in the driveway?
+[5/4/2017 10:43:49 AM] Rodger Sherman: I assume that's the case
+[5/4/2017 10:43:51 AM] Gomez: nope, she parks on the fron sidewalk?
+[5/4/2017 10:43:59 AM] Rodger Sherman: nevermind then, I didn't see her or hear her
+[5/4/2017 10:44:00 AM] Gomez: I dont think thats how I am supposed to say it
+[5/4/2017 10:44:18 AM] Gomez: the front house
+[5/4/2017 10:44:26 AM] Rodger Sherman: I didn't think anyone would be home. no school?
+[5/4/2017 10:44:27 AM] Gomez: no dude, I would never leave you with that kind of resposability
+[5/4/2017 10:44:35 AM] Rodger Sherman: I wasn't worried about it bruh
+[5/4/2017 10:44:36 AM] Rodger Sherman: lol
+[5/4/2017 10:44:44 AM] Gomez: lol
+[5/4/2017 10:44:49 AM] Rodger Sherman: I just felt bad because I was loud and invited Dwight in and whatnot
+[5/4/2017 10:44:53 AM] Rodger Sherman: thinking there was no one around
+[5/4/2017 10:44:57 AM] Rodger Sherman: but then I hard hte kiddos playing
+[5/4/2017 10:44:58 AM] Gomez: they had school.
+[5/4/2017 10:45:12 AM] Rodger Sherman: ok ok I guess it was just a weird day
+[5/4/2017 10:45:22 AM] Rodger Sherman: I didn't see anyone in the house when I left at 8 am
+[5/4/2017 10:45:30 AM] Gomez: thats fine, yeah. Gicelle wakes up like 10 minutes before the kids have to go to school
+[5/4/2017 10:45:32 AM] Rodger Sherman: and I normally run into them getitng ready
+[5/4/2017 10:45:43 AM] Rodger Sherman: again, none of htis was a big deal at all
+[5/4/2017 10:45:45 AM] Rodger Sherman: itw as just odd
+[5/4/2017 10:45:54 AM] Rodger Sherman: and I felt bad being louder than Iw ould have been had I known
+[5/4/2017 10:46:00 AM] Gomez: that makes sense, no, usually before i leave the house I check that Gicelle is there, if she is supposed to drop off the kids
+[5/4/2017 10:46:16 AM] Rodger Sherman: and the last few times Gicelle was here she was parked in the driveway
+[5/4/2017 10:46:22 AM] Gomez: meh, they are supposed to be awake by 8, I mean they should not even be at the house at 8, lo
+[5/4/2017 10:46:22 AM] Rodger Sherman: I didn't even look out front
+[5/4/2017 10:46:48 AM] Gomez: hah, I think she has been staying at the house when she comes to take the kids to school
+[5/4/2017 10:47:10 AM] Gomez: she just parks on the front house whenver she comes over to help me with the kids
+[5/4/2017 10:47:33 AM] Rodger Sherman: Dwight works for the fire department for our neighborhood
+[5/4/2017 10:47:36 AM] Rodger Sherman: and he does 48 hour shifts
+[5/4/2017 10:47:41 AM] Rodger Sherman: so we got breakfast at santiago's
+[5/4/2017 10:48:19 AM] Gomez: but yesterday, I was closed to leave the kids by themselves. she was supposed to have been there at 4, and I saw Ethan and I thought it was her, then something told me to check for her car, when I didnt see it I was fucking pissed that she wasnt there yet
+[5/4/2017 10:48:29 AM] Gomez: but that was a really close call on leaving the kids by themselves
+[5/4/2017 10:48:42 AM] Gomez: thats cool. Its nice to have that santiago's so closed by
+[5/4/2017 10:49:17 AM] Rodger Sherman: I got taquitos
+[5/4/2017 10:50:22 AM] Gomez: cool. I usually go for tamales, or their breakfast burritos, I miss those way too much
+[5/4/2017 10:50:27 AM] Gomez: and usually XX hot
+[5/4/2017 10:52:04 AM] Gomez: fuck, I feel like I wasted my time, but not really I need to understand that Nick doesnt know anything about Evo and how to handle async stuff that well
+[5/4/2017 11:15:19 AM] Gomez: so, just to give you a heads up, on a normal week. Gicelle is going to be at the house twice, to drop off the kids
+[5/4/2017 11:16:45 AM] Rodger Sherman: that's fine
+[5/4/2017 11:16:48 AM] Rodger Sherman: like I said, all of it
+[5/4/2017 11:16:50 AM] Rodger Sherman: 's fine
+[5/4/2017 11:16:56 AM] Rodger Sherman: I just usually see more activity
+[5/4/2017 12:40:33 PM] Rodger Sherman: Jake is indeed in
+[5/4/2017 12:41:07 PM] Gomez: are we driving or flying?
+[5/4/2017 12:41:22 PM] Gomez: what day are you planning on leaving, when are you planning on coming back?
+[5/4/2017 12:42:52 PM] Rodger Sherman: Wednesday night we'll leave
+[5/4/2017 12:43:01 PM] Rodger Sherman: hopefully at a reasonable hour, but probably around 6PM
+[5/4/2017 12:43:03 PM] Rodger Sherman: get there kinda late
+[5/4/2017 12:43:06 PM] Rodger Sherman: but that's fine
+[5/4/2017 12:43:13 PM] Rodger Sherman: see the show thursday night, leave friday morning
+[5/4/2017 12:44:02 PM] Gomez: ok, I need to tell Gicelle to get the time off so I can go to the show, if she cant take the time off thats the show stopper for me, so pretty much Wed, Thursday and Friday, right?
+[5/4/2017 12:45:10 PM] Rodger Sherman: we'll probably be back Friday night
+[5/4/2017 12:45:10 PM] Rodger Sherman: but yes
+[5/4/2017 12:46:33 PM] Gomez: 28, 29, 30. ok I might be able to sell that one
+[5/4/2017 12:49:59 PM] Gomez: ok, ill check in a moment to see what she says, I just told her the dates.
+[5/4/2017 12:51:39 PM] Rodger Sherman: The vegas show was 500/ticket btw
+[5/4/2017 12:51:40 PM] Rodger Sherman: lololol
+[5/4/2017 12:52:45 PM] Gomez: damn!!!
+[5/4/2017 12:52:52 PM] Gomez: well, I guess we are not going to vegas
+[5/4/2017 12:52:54 PM] Gomez: lol
+[5/4/2017 12:55:01 PM] Rodger Sherman: 20 bux to texas
+[5/4/2017 12:55:03 PM] Rodger Sherman: super cheap
+[5/4/2017 12:55:46 PM] Gomez: wow, thats extremely cheap, I thought it would have been more expensive than that
+[5/4/2017 1:31:19 PM] Rodger Sherman: oh I guess I owe you rent huh
+[5/4/2017 1:37:57 PM] Gomez: oh, yeah, I have been wantng to tell you but I keep forgetting about it
+[5/4/2017 1:37:59 PM] Gomez: lol
+[5/4/2017 2:25:33 PM] Gomez: so, thats a no :(
+[5/4/2017 2:25:45 PM] Rodger Sherman: what's a no
+[5/4/2017 2:26:29 PM] Gomez: something, that actually makes me feel bad, is that that is Daniella's Birthday, there was a reason why we wanted the kids earlier, plus father's day weekend, the whole weekend is really loaded for me dude, The Rammstein concert
+[5/4/2017 2:28:20 PM] Rodger Sherman: that's fine
+[5/8/2017 10:29:01 AM] Gomez: hey, so I am planning to replace the shower doors this weekend. I will be measuring the doors sometime this week.
+[5/8/2017 10:29:09 AM] Rodger Sherman: oooh sweet
+[5/8/2017 10:29:14 AM] Gomez: anything that you feel that needs to be take care of
+[5/8/2017 10:29:41 AM] Rodger Sherman: just the doors
+[5/8/2017 10:29:49 AM] Rodger Sherman: and I have my own doors to repair too lol
+[5/8/2017 10:29:54 AM] Gomez: lawl
+[5/8/2017 10:30:40 AM] Gomez: also, this weekend might be kinda slow, not having to work so many hours at work and all that, I might clean the carpets, I suauly start upstairs first then move on to the basement.
+[5/8/2017 10:31:57 AM] Rodger Sherman: ok
+[5/8/2017 10:48:26 AM] Gomez: I ran this query
+SELECT n.[ID], vtn.ValRuleID, vtn.ReadableID, vtn.DeprecatedOn
+  FROM [QANotes].[QANotes].[Notes] n
+  inner join [QANotes].[QANotes].[ValRule_To_Note] vtn
+  on n.ID = vtn.NoteID
+  where vtn.ValidationRule = 0
+  --and DeprecatedOn is null  
+  and n.[Active] = 1
+  --and ID in (
+  --select [NoteID], [ValRuleID], [ReadableID]
+  --from [QANotes].[QANotes].[ValRule_To_Note] vtn
+  --inner join [QANotes].[QANotes].[Notes] n
+  --on n.ID = vtn.NoteID
+  --where ValidationRule = 0
+  --and Active = 1
+  --and DeprecatedOn is null
+  --)
+   AND 
+  (
+  n.[TechLogic] LIKE '%checkvalidation%'
+  OR   n.[ID] IN 
+  (SELECT NoteID from [QANotes].[QANotes].[Letter_Tables] WHERE [Letter_Tables].TableDesc LIKE '%checkvalidation%')
+  OR n.[ID] IN 
+  (SELECT NoteID from [QANotes].[QANotes].[LangNote] WHERE [LangNote].BusinessLogic LIKE '%checkvalidation%' 
+  or [LangNote].Note LIKE '%checkvalidation%')
+  )
+[5/8/2017 10:48:57 AM] Rodger Sherman: oh dingus
+[5/8/2017 10:49:16 AM] Rodger Sherman: these notes that will have CheckValidation are not linked to anythingi n ValRule_To_Note
+[5/8/2017 10:49:24 AM] Rodger Sherman: you'd need to run a LEFT OUTER JOIN
+[5/8/2017 10:49:58 AM] Rodger Sherman: as an example, Note Id 191300 is an example note
+[5/8/2017 10:50:02 AM] Gomez: oh, ok. yeah my logic is not correct, I need to fix that
+[5/8/2017 10:50:39 AM] Gomez: my bad, I might have missread the ticket
+[5/8/2017 12:29:08 PM] Gomez: dont forget to do non billable for the HR meeting
+[5/8/2017 12:29:18 PM | Edited 12:29:20 PM] Gomez: I almost did again
+[5/8/2017 12:29:20 PM] Rodger Sherman: lol I just rolled that into my daily hour meeting task
+[5/10/2017 9:32:01 AM] Gomez: holly fucking hell, are the peope in NJ way underpaid or just some developers in general?
+[5/10/2017 9:51:46 AM] Rodger Sherman: Nj is underpaid
+[5/10/2017 9:53:11 AM] Gomez: i believe you are underpaid as well, I dont know how much you make but since there is not like a huge gap between you and me I think you are going to get the same speech than me, adjust to be inside the band then your 2%
+[5/10/2017 10:01:18 AM] Rodger Sherman: I'm definitely in the band
+[5/10/2017 10:21:14 AM] Gomez: sushi tomorrow?
+[5/10/2017 10:31:16 AM] Rodger Sherman: ew ugh depends on who goes
+[5/10/2017 10:31:36 AM] Gomez: so far, Nick Wayne and myself
+[5/10/2017 10:41:13 AM] Gomez: man the recruiter from amazon is hot
+[5/10/2017 10:44:39 AM] Rodger Sherman: lol
+[5/10/2017 10:45:31 AM] Rodger Sherman: soooooooooooo
+[5/10/2017 10:45:44 AM] Rodger Sherman: I thought we already covered the eVo Option stuff
+[5/10/2017 10:46:11 AM] Gomez: I dont think so, tbh I feel this is the first time we have talked about it, but I tend to forget shit sometimes
+[5/10/2017 10:46:23 AM] Gomez: so please educate me or re-educate me
+[5/10/2017 10:46:30 AM] Rodger Sherman: uh we have most definitely discussed it multiple times
+[5/10/2017 10:46:31 AM] Rodger Sherman: but it's fine
+[5/10/2017 10:46:54 AM] Rodger Sherman: Staging FUW can associate uploads to "Evo"
+[5/10/2017 10:46:57 AM] Rodger Sherman: on your uploadable
+[5/10/2017 10:47:08 AM] Rodger Sherman: you'd write
+[5/10/2017 10:48:20 AM] Rodger Sherman: myUploadable.AddOption(FUWDirTree.Option_EvoUpload)
+[5/10/2017 10:48:27 AM] Rodger Sherman: if you do that before you upload it, it uploads with hte otpion
+[5/10/2017 10:49:01 AM] Rodger Sherman: if you're adding it to an existing item, one that's already been uploaded, call .Save after
+[5/10/2017 10:50:18 AM] Gomez: ok, I can do that, I still dont remember you telling me this before
+[5/10/2017 10:50:45 AM] Rodger Sherman: it was in very nearly every meeting about GPS and EVO
+[5/10/2017 10:51:05 AM] Rodger Sherman: We'd talked about how I was going to write stuff to upgrade all existing EVOUPLOADS to use hte new system
+[5/10/2017 10:51:19 AM] Rodger Sherman: I even confirmed with you when Iw rote that method, but I wrote it wrong, so I have to redo it anyway
+[5/10/2017 10:52:23 AM] Gomez: ok, I will make the changes, I dont think that really changes that much on the current logic that I have now
+[5/10/2017 10:52:26 AM] Gomez: sorry
+[5/10/2017 10:52:39 AM] Rodger Sherman: nope it should be real easy
+[5/10/2017 10:52:41 AM] Rodger Sherman: which was the goal
+[5/10/2017 10:52:48 AM] Rodger Sherman: and if you do that, we even gave them tehir own fancy icon
+[5/10/2017 10:53:01 AM] Gomez: nice
+[5/10/2017 10:53:06 AM] Gomez: I like that fancy icons
+[5/10/2017 10:53:59 AM] Rodger Sherman: lol fancy here means it looks like hte ANdroid 'share' icon, rotated right 90degrees
+[5/10/2017 10:54:10 AM] Gomez: lol
+[5/10/2017 10:54:50 AM] Gomez: oh, good thing we are talking about money, do you have the other half of the rent, lol.
+[5/10/2017 10:55:22 AM] Rodger Sherman: I can do taht today
+[5/10/2017 10:56:04 AM] Gomez: ok, for some reason I feel weird asking about the rent money, and thanks
+[5/10/2017 11:00:10 AM] Rodger Sherman: Sorry it's been so long, shit keeps coming up
+[5/10/2017 12:11:56 PM] Gomez: so, who is the person you would say not to besides Bunch?
+[5/10/2017 12:15:04 PM] Rodger Sherman: wtf
+[5/10/2017 12:15:06 PM] Rodger Sherman: esl?
+[5/10/2017 12:17:41 PM] Gomez: lol
+[5/10/2017 12:17:41 PM] Gomez: [10:21:14 AM] Daniel: sushi tomorrow?
+[10:31:16 AM] Rodger Sherman: ew ugh depends on who goes
+[5/10/2017 12:18:02 PM] Rodger Sherman: it's not about who would get me to not go
+[5/10/2017 12:18:09 PM] Rodger Sherman: but if hte people going are cool enough to entice me to come
+[5/10/2017 12:18:20 PM] Gomez: lol, so far Nick, Wayne and myself
+[5/10/2017 12:18:50 PM] Rodger Sherman: wow you got Nick to go out?
+[5/10/2017 12:18:58 PM] Rodger Sherman: that might be reason enough to go
+[5/10/2017 12:19:05 PM] Rodger Sherman: but I will likely not go with y'all
+[5/10/2017 12:19:29 PM] Gomez: well, I just told amanda if she comes you have to come too.
+[5/10/2017 12:19:38 PM] Rodger Sherman: this si true\
+[5/10/2017 12:40:30 PM] Gomez: Mark is coming too
+[5/11/2017 10:25:21 AM] Gomez: sushi 1230
+[5/11/2017 11:15:50 AM] Gomez: are you doing the walk this year?
+[5/11/2017 11:16:03 AM] Rodger Sherman: yeah
+[5/11/2017 11:17:09 AM] Gomez: I guess I can do it as well...
+[5/11/2017 11:32:56 AM] Gomez: damn it, that girl from Amazon is hot, and she even has a hotter voice, lol.
+[5/11/2017 7:06:09 PM] Gomez: So i started the test for Amazon, so fucking easy and i fucked up by closing the session, i emailed the recruiter and the admin since is not letting me back in, lol
+[5/11/2017 7:06:22 PM] Rodger Sherman: wow that doesn't look good bruh
+[5/11/2017 7:08:34 PM] Gomez: 5 minutes into it, i am fucking upset. It was so simple,  i could have finished that in like 10 minutes
+[5/11/2017 7:08:43 PM] Gomez: FUCK!
+[5/23/2017 2:11:14 PM] Gomez: it sounded like some mexican music
+[5/26/2017 11:00:40 AM] Rodger Sherman: are the kids home tonight
+[5/26/2017 11:00:54 AM] Gomez: yeah, whats up?
+[5/26/2017 11:02:33 AM] Rodger Sherman: lame
+[5/26/2017 11:02:38 AM] Rodger Sherman: tryna play magic
+[5/26/2017 11:02:43 AM] Rodger Sherman: I guses we can still play magic there
+[5/26/2017 11:03:43 AM] Gomez: yeah, you guys should be able to play magic. I might end up taking the kids with Nick to the golf, if you want to join us, but it seems you already have plans
+[5/26/2017 11:06:26 AM] Rodger Sherman: when did that plan get made
+[5/26/2017 11:06:27 AM] Rodger Sherman: lame
+[5/26/2017 11:06:28 AM] Rodger Sherman: oh well
+[5/26/2017 11:07:14 AM] Gomez: yeah, I just found out about it right now, I am going because it will be nice to do something like that with the kids before they leave to visit gicelle's parents
+[5/26/2017 11:08:21 AM] Gomez: fucking morning dude. Gicelle really fucked me over this morning, I really dont know what she was doing or who she was doing, but we were supposed to meet up this morning to drop off the kids so I could come to work and then all of a sudden she went completed offline
+[5/26/2017 11:08:31 AM] Gomez: no phone, messenger nothing
+[5/26/2017 11:11:36 AM] Rodger Sherman: btw
+[5/26/2017 11:11:40 AM] Rodger Sherman: did I wake you up last night?
+[5/26/2017 11:11:41 AM] Rodger Sherman: or something?
+[5/26/2017 11:11:50 AM] Rodger Sherman: I could hear your voice at liek 130 AM
+[5/26/2017 11:11:55 AM] Rodger Sherman: and that sucks about Gicelle
+[5/26/2017 11:11:59 AM] Rodger Sherman: she needs tog et her shit together
+[5/26/2017 11:12:02 AM] Gomez: so about that
+[5/26/2017 11:12:13 AM] Rodger Sherman: the other folks were right, you should look into the legal ramifications of her behavior
+[5/26/2017 11:13:25 AM] Gomez: yeah, I am actually I pretty much told her this morning that I am lucky to have a job that lets me make up for my time, but that is not to accomodate her anymore. either she helps with the kids or we go halfies for summer camps or something
+[5/26/2017 11:14:02 AM] Gomez: I heard your voice last night, but I was already awake, who were you talkng to btw? but yeah I have been talking to this girl for the past few days
+[5/26/2017 11:14:17 AM] Rodger Sherman: thursday night is phone call nigth with ashley
+[5/26/2017 11:14:30 AM] Gomez: oh, cool. hows she doing?
+[5/26/2017 11:14:46 AM] Gomez: btw, remember how much shit I gave you about long distance relationships, lol
+[5/26/2017 11:14:54 AM] Gomez: I am about to eat my own words
+[5/26/2017 11:19:58 AM] Rodger Sherman: bruhhhhhhhhhh
+[5/26/2017 1:34:00 PM] Gomez: nightmares next weekend, are you in?
+[5/26/2017 1:34:11 PM] Rodger Sherman: yes
+[5/26/2017 1:34:36 PM] Gomez: ill get us the tickets is on Friday at 6, or 7 i believe
+[5/26/2017 1:44:13 PM] Gomez: actually 815 at this place
+https://www.google.com/maps?f=q&hl=en&q=2510+E+Colfax+Ave,+Denver,+CO,+80206,+us
+[5/29/2017 4:35:29 PM] Rodger Sherman: You at work
+[5/31/2017 3:22:31 PM] Gomez: dude, do you now how much David was making?
+[5/31/2017 3:45:40 PM] Rodger Sherman: no
+[5/31/2017 3:45:43 PM] Rodger Sherman: why don't you ask him
+[5/31/2017 3:49:32 PM] Gomez: Wayne told me, he had a meeting with his team, pretty much telling them what to expect from GLI, telling them either get it on paper or dont expect them to honor it
+[5/31/2017 3:49:51 PM] Gomez: he was making less than you and me, 83500
+[5/31/2017 3:50:15 PM] Gomez: I really thought he was going to be north of 100k
+[5/31/2017 3:51:10 PM] Gomez: actually let me fix that, he was making a little bit more than me, less than you
+[5/31/2017 3:57:34 PM] Rodger Sherman: no. fuckin. way.
+[5/31/2017 3:57:36 PM] Rodger Sherman: NO WAY
+[5/31/2017 3:57:42 PM] Rodger Sherman: OMFG
+[5/31/2017 3:57:53 PM] Rodger Sherman: what an onslaught of emotion
+[5/31/2017 3:58:02 PM] Rodger Sherman: I was super positive he was close to 100k and i've always been a bit jealous
+[5/31/2017 3:58:13 PM] Rodger Sherman: even though I understood why and felt he definitely deserved it
+[5/31/2017 4:02:17 PM] Gomez: yeah, when he told me, I am still actually surprised that he gave them a 3 week notice. I would have been in his situation, fuck this shit, fuck you all I am outty
+[5/31/2017 4:03:03 PM] Rodger Sherman: yeaaaaah
+[5/31/2017 4:03:05 PM] Rodger Sherman: holy fuckin shit
+[5/31/2017 4:04:30 PM] Gomez: yeah, GLI should be really happy that David didnt just leave
+[6/1/2017 11:39:48 AM] Gomez: I am going to have some people over on the 15th at the house, kids will be there and whatnot just a regular carne asada
+[6/1/2017 11:39:54 AM] Gomez: just giving you a heads up
+[6/1/2017 11:40:00 AM] Rodger Sherman: sounds good
+[6/1/2017 11:40:49 AM] Gomez: btw, you are welcome to join us, is just the guys I was playing basketball this season.
+[6/1/2017 11:43:28 AM] Rodger Sherman: sweet
+[6/1/2017 1:46:23 PM] Gomez: Kale was getting after me, if I was planning to comeback, wtf
+[6/1/2017 1:47:08 PM] Rodger Sherman: what?
+[6/1/2017 1:47:47 PM] Gomez: because I went to lunch he was like are you comingback? whe I specifically told him that my schedule was going to be normal the next couple of weeks
+
+[6/1/2017 1:52:17 PM] Michael Gentilello: ill check out the xslt
+[6/1/2017 1:52:21 PM] Michael Gentilello: er xsl
+[6/1/2017 1:52:25 PM] Rodger Sherman: wow that raiseandsetifchanged must be magic
+[6/1/2017 1:52:34 PM] Michael Gentilello: rodgers mind is being blown
+[6/1/2017 1:52:39 PM] Nicholas Yanak: pretty much
+[6/1/2017 1:52:41 PM] Michael Gentilello: too many wows not followed by anger
+[6/1/2017 1:52:42 PM] Nicholas Yanak: iys black magic
+[6/1/2017 1:52:54 PM] Nicholas Yanak: it casts a lvl 9 wish spell
+[6/1/2017 1:53:05 PM] Michael Gentilello: lol
+[6/1/2017 1:53:14 PM] Michael Gentilello: the group for strahd has THE most depressing backstories so far
+[6/1/2017 1:53:19 PM] Michael Gentilello: this is gonna be a fun campaign
+[6/1/2017 1:53:37 PM] Michael Gentilello: one of them was working for a vampire and knew it but did it to provide for his family
+[6/1/2017 1:53:55 PM] Michael Gentilello: then something mysterious happened and he did a deed for his master, came back to the master as a pile of ash and his wife and daughter slaughtered
+[6/1/2017 1:54:03 PM] Michael Gentilello: then they rose as vampires a few days later so he nailed them in his basement
+[6/1/2017 1:54:07 PM] Michael Gentilello: and he is searching the world for a cure lol
+[6/1/2017 1:54:26 PM] Michael Gentilello: he picked one of the strahd character backgrounds, i think harrowing event
+[6/1/2017 3:44:32 PM] Michael Gentilello: HELL of a meeting
+[6/1/2017 4:21:47 PM] Rodger Sherman: Does anyone in this chat know their dental coverage info?
+[6/1/2017 4:22:00 PM] Rodger Sherman: Like, what you provide to the dentist?
+[6/1/2017 4:22:00 PM] Nicholas Yanak: can you be more specific
+[6/1/2017 4:24:44 PM] Rodger Sherman: Thanks Nick
+[6/1/2017 4:24:48 PM] Rodger Sherman: I DO have a dental option card
+[6/1/2017 4:24:57 PM] Rodger Sherman: this entire time I didn't even notice they were different fuckin cards
+[6/1/2017 4:24:58 PM] Rodger Sherman: lol
+[6/1/2017 4:29:12 PM] Gomez: (like)
+[6/1/2017 4:34:48 PM] Rodger Sherman: the Devner Zoo is adding animatronic dinosaurs!
+[6/1/2017 4:35:33 PM] Gomez: nice
+[6/1/2017 4:35:46 PM] Gomez: I might add the yearly membership
+[6/1/2017 4:37:47 PM] Michael Gentilello: Lol
+[6/2/2017 7:11:01 AM] Wayne Olinger: lol
+[6/2/2017 7:11:08 AM] Wayne Olinger: silly rodger
+[6/2/2017 7:11:12 AM] Wayne Olinger: not knowing there are 2 cards
+[6/2/2017 7:11:31 AM] Michael Gentilello: What the fuck happened to Skype on the phone
+[6/2/2017 7:11:52 AM] Wayne Olinger: shat a brick and died?
+[6/2/2017 7:12:10 AM] Michael Gentilello: It's all new and different
+[6/2/2017 7:12:16 AM] Michael Gentilello: Looks like shit
+[6/2/2017 7:12:31 AM] Wayne Olinger: shat a brick then ate the brick to gain it's power?
+[6/2/2017 7:12:34 AM] Michael Gentilello: Won't let me send screenshots
+[6/2/2017 7:14:55 AM] Wayne Olinger: sucks dude
+[6/2/2017 7:19:26 AM] Wayne Olinger: do we have the david lunch today?
+[6/2/2017 7:31:49 AM] Nicholas Yanak: I bought a ton of minis yesterday.
+[6/2/2017 7:32:00 AM] Nicholas Yanak: I got like 50 ish minis for 30 bucks.
+[6/2/2017 7:32:07 AM] Wayne Olinger: mini m&ms?
+[6/2/2017 7:32:13 AM] Wayne Olinger: oh like dnd minis
+[6/2/2017 7:32:14 AM] Nicholas Yanak: And 3 of them are pretty huge dragons
+[6/2/2017 7:56:29 AM] Michael Gentilello: what a fantastic morning
+[6/2/2017 7:56:41 AM] Michael Gentilello: so my fridge is on the fritz cause my fiance decided to accidentally set the freezer to max
+[6/2/2017 7:56:48 AM] Michael Gentilello: so everything is frozen and no air is getting to the fridge portion
+[6/2/2017 7:56:57 AM] Nicholas Yanak: I mean it will that
+[6/2/2017 7:57:08 AM] Michael Gentilello: so this morning i had to attempt to salvage all i could from the fridge and get it over to my friends
+[6/2/2017 7:57:15 AM] Michael Gentilello: and empty the freezer and such and unplug it
+[6/2/2017 7:57:22 AM] Michael Gentilello: not even 10am and im already pissed
+[6/2/2017 7:57:33 AM] Nicholas Yanak: You shoudl amade her do it.
+[6/2/2017 7:57:36 AM] Nicholas Yanak: It's her fault
+[6/2/2017 7:58:16 AM] Michael Gentilello: she was busy throwing up cause shes hungover
+[6/2/2017 7:58:18 AM] Michael Gentilello: pussy
+[6/2/2017 7:58:35 AM] Nicholas Yanak: yeah well seh can clean the frisge adn then clean the puke.
+[6/2/2017 7:58:48 AM] Nicholas Yanak: fucking mike cuckilello over here.
+[6/2/2017 8:00:07 AM] Wayne Olinger: i was hungover as fuck yesterday
+[6/2/2017 8:00:09 AM] Wayne Olinger: didn't throw up
+[6/2/2017 8:00:11 AM] Wayne Olinger: just stayed home
+[6/2/2017 8:00:22 AM] Wayne Olinger: still got 2 hours of work in too
+[6/2/2017 8:03:03 AM] Michael Gentilello: i didnt want to come in a t all today
+[6/2/2017 8:03:07 AM] Michael Gentilello: was debating working from home
+[6/2/2017 8:03:10 AM] Michael Gentilello: “working”
+[6/2/2017 8:03:19 AM] Michael Gentilello: but i want to get this AE shit finished and out because that meeting yesterday took up 2 hours of my day
+[6/2/2017 8:03:20 AM] Michael Gentilello: lol
+[6/2/2017 8:03:52 AM] Wayne Olinger: nice
+[6/2/2017 8:04:08 AM] Michael Gentilello: hm im not getting skype notifications
+[6/2/2017 8:04:46 AM] Michael Gentilello: i dont care anymore
+[6/2/2017 8:04:48 AM] Michael Gentilello: today is shot
+[6/2/2017 8:05:13 AM] Wayne Olinger: yay for friday being fucked before noon
+[6/2/2017 8:07:35 AM] Nicholas Yanak: Yeah I mean it's pretty much the worst day ever.
+[6/2/2017 8:07:42 AM] Nicholas Yanak: Holocaust, 9/11, today
+[6/2/2017 8:08:04 AM] Wayne Olinger: the jews didn't even have it this bad
+[6/2/2017 8:08:23 AM] Nicholas Yanak: They day they sacked the librarires of alexandria
+[6/2/2017 8:08:43 AM | Edited 8:08:52 AM] Nicholas Yanak: I can say without a doubt that noone has even been treated as badly as mike this day.
+[6/2/2017 8:09:35 AM] Wayne Olinger: he is one ugly vagina necked mofo
+[6/2/2017 8:09:35 AM] Michael Gentilello: #triggered
+[6/2/2017 8:24:16 AM] Gomez: How politically correct of kale, guys and girls. I would have called all of you douchebags
+[6/2/2017 8:24:34 AM] Wayne Olinger: how many girls are there?
+[6/2/2017 8:24:42 AM] Gomez: 2
+[6/2/2017 8:25:03 AM] Wayne Olinger: and i have been recently informed that "girls" is demeaning cause it implies females under 18
+[6/2/2017 8:25:12 AM] Wayne Olinger: gals would be fine
+[6/2/2017 8:25:17 AM] Wayne Olinger: or ladies
+[6/2/2017 8:25:22 AM] Gomez: I can't keep up with white people language
+[6/2/2017 8:25:40 AM] Nicholas Yanak: just call them the spanish tem
+[6/2/2017 8:25:43 AM] Gomez: I actually think gals is worst than girls for some r3ason
+[6/2/2017 8:25:55 AM] Nicholas Yanak: nosotros cofefemos
+[6/2/2017 8:25:57 AM] Gomez: Anuncio para todos
+[6/2/2017 8:26:02 AM] Gomez: Jajaja
+[6/2/2017 8:26:11 AM] Wayne Olinger: covfefe
+[6/2/2017 8:26:29 AM] Gomez: What are you doing so early at work nick?
+[6/2/2017 8:26:37 AM] Nicholas Yanak: weeeell
+[6/2/2017 8:26:45 AM] Wayne Olinger: he wants that 3pm dinner
+[6/2/2017 8:26:56 AM | Edited 8:27:33 AM] Nicholas Yanak: apparantly they are working on the roof on my building
+[6/2/2017 8:27:03 AM] Nicholas Yanak: so I got woekn up by a bunch of loud hamering
+[6/2/2017 8:27:09 AM] Nicholas Yanak: so I decided to come into work.
+[6/2/2017 8:29:05 AM] Wayne Olinger: hearing david talk with oscar about projects and shit, he has a lot more motivation to be helpful than i would on my last day
+[6/2/2017 8:30:25 AM] Nicholas Yanak: https://www.youtube.com/watch?v=MV_3Dpw-BRY&list=PL1A594B0ABCBDFC96
+[6/2/2017 9:08:34 AM] Wayne Olinger: anyone a john oliver fan?
+[6/2/2017 9:08:51 AM] Nicholas Yanak: yeah I watch it sometimes
+[6/2/2017 9:09:17 AM] Wayne Olinger: listening to his show from may 21st
+[6/2/2017 9:10:31 AM] Wayne Olinger: apparently his security advisors have to give him 1 page memos cause longer than that and he doens't want to read, they've also started sprinkling his name into the briefing cause he will keep reading if he is mentioned
+[6/2/2017 9:26:52 AM] Michael Gentilello: fucking skype and no notifications
+[6/2/2017 9:26:54 AM] Michael Gentilello: its all broken
+[6/2/2017 9:26:59 AM] Gomez:  Lol, i heard that, that would be hilarious if that's trueand really sad at the same time
+[6/2/2017 9:26:59 AM] Michael Gentilello: didnt see all this
+[6/2/2017 9:27:06 AM] Wayne Olinger: tha'ts weird
+[6/2/2017 9:27:14 AM] Michael Gentilello: i think cause i opened it on my phone this morning
+[6/2/2017 9:27:21 AM] Michael Gentilello: and the phone app is all different and jacked up
+[6/2/2017 9:28:44 AM] Wayne Olinger: this is why you should never upgrade
+[6/2/2017 9:28:46 AM] Michael Gentilello: and dans message just popped up from 3 minutes ago
+[6/2/2017 9:28:50 AM] Wayne Olinger: stick with the stable version you understand
+[6/2/2017 9:29:00 AM] Gomez: yeahm I wa actually going to say something about that
+[6/2/2017 9:29:05 AM] Michael Gentilello: i went chasing waterfalls
+[6/2/2017 9:29:09 AM] Gomez: my phone's signal sucks
+[6/2/2017 9:29:28 AM] Michael Gentilello: where are you?
+[6/2/2017 9:30:48 AM] Gomez: at your moms
+[6/2/2017 9:30:52 AM] Michael Gentilello: nice
+[6/2/2017 9:31:02 AM] Gomez: thats exactly what she said :)
+[6/2/2017 9:31:09 AM] Gomez: ok, I need to stop...
+[6/2/2017 9:31:14 AM] Michael Gentilello: well shes been dead for 5 years so im just impressed she said anything
+[6/2/2017 9:31:15 AM] Gomez: good morning everyone
+[6/2/2017 9:31:30 AM] Gomez: YOu used that one before, I am not falling for it again
+[6/2/2017 9:31:33 AM] Michael Gentilello: damn!
+[6/2/2017 9:31:33 AM] Michael Gentilello: lol
+[6/2/2017 9:31:37 AM] Gomez: lol
+[6/2/2017 9:31:50 AM] Gomez: you bastard I have good memory whren it comes to moms
+[6/2/2017 9:32:01 AM] Michael Gentilello: https://i.kinja-img.com/gawker-media/image/upload/s--ioMmNTNr--/c_scale,fl_progressive,q_80,w_800/dvdh6ynkhrcezgngupzj.gif
+[6/2/2017 9:32:08 AM] Michael Gentilello: got a good chuckle out of that
+[6/2/2017 9:32:20 AM] Gomez: lol
+[6/2/2017 9:48:36 AM] Rodger Sherman: Lol @ Cuckilello
+[6/2/2017 9:48:51 AM] Michael Gentilello: shut your whore mouth rodger
+[6/2/2017 9:50:48 AM] Rodger Sherman: Lolol I'm a white, you're a prude
+[6/2/2017 9:50:55 AM] Rodger Sherman: Lolol @ autocorrect
+[6/2/2017 9:50:58 AM] Michael Gentilello: hahahahaha
+[6/2/2017 9:51:03 AM] Michael Gentilello: oh you got me real good
+[6/2/2017 9:56:13 AM] Wayne Olinger: that horror game actually looked pretty sick
+[6/2/2017 9:56:20 AM] Wayne Olinger: funny the car ran them over
+[6/2/2017 9:56:28 AM] Michael Gentilello: thats the friday the 13th game
+[6/2/2017 9:57:40 AM] Rodger Sherman: I see Mike also friended Mindy on fb
+[6/2/2017 9:57:46 AM] Michael Gentilello: yep
+[6/2/2017 9:57:49 AM] Michael Gentilello: so no trolling plox
+[6/2/2017 9:57:57 AM] Michael Gentilello: she already tried to give me a fridge lulz
+[6/2/2017 9:58:17 AM] Nicholas Yanak: how nice of her
+[6/2/2017 10:00:53 AM] Gomez: that is nice of her
+[6/2/2017 10:01:19 AM] Michael Gentilello: lol carolina cant stop throwing up and now she said shes scared shes getting dehydrated
+[6/2/2017 10:01:21 AM] Michael Gentilello: this is fun
+[6/2/2017 10:01:28 AM] Rodger Sherman: Omg women
+[6/2/2017 10:01:37 AM] Michael Gentilello: i said smoke some stuff and youll be fine
+[6/2/2017 10:01:45 AM] Michael Gentilello: why do you think cancer patients use it lol
+[6/2/2017 10:02:39 AM] Gomez: dont worry she is just pregnant
+[6/2/2017 10:02:50 AM] Michael Gentilello: well considering she just had her period i doubt it
+[6/2/2017 10:02:54 AM] Michael Gentilello: immaculate conception
+[6/2/2017 10:03:04 AM] Wayne Olinger: tell her she'll only die from dehydration if she's spewing from both ends non-stop for 6 hours straight
+[6/2/2017 10:03:08 AM] Wayne Olinger: with no fluids going in
+[6/2/2017 10:03:17 AM] Gomez: it worked for maria
+[6/2/2017 10:03:21 AM] Nicholas Yanak: tell her to go get some pedialtye
+[6/2/2017 10:03:23 AM] Wayne Olinger: do you mean mary?
+[6/2/2017 10:03:31 AM] Nicholas Yanak: no mario is the mormon mary
+[6/2/2017 10:03:39 AM] Wayne Olinger: i thought he was that plumber
+[6/2/2017 10:03:46 AM] Nicholas Yanak: well later on
+[6/2/2017 10:03:59 AM | Edited 10:04:09 AM] Nicholas Yanak: first she gave birth to josephs tablets
+[6/2/2017 10:04:33 AM | Edited 10:04:37 AM] Gomez: maria, she was mexican
+[6/2/2017 10:04:35 AM] Nicholas Yanak: then afterward she took up plumbing to help pay the bills
+[6/2/2017 10:04:47 AM] Michael Gentilello: lol
+[6/2/2017 10:04:52 AM] Gomez: sounds about right
+[6/2/2017 10:06:08 AM] Wayne Olinger: dan i'm somewhere around 100% positive there weren't any mexicans living in the middle east around 10BC
+[6/2/2017 10:06:18 AM] Gomez: racist
+[6/2/2017 10:06:43 AM] Nicholas Yanak: yeah it was all a bunch of white people
+[6/2/2017 10:06:58 AM] Wayne Olinger: you're appropriating cultrue here dan
+[6/2/2017 10:07:07 AM] Nicholas Yanak: and then the egyptians drove them out
+[6/2/2017 10:07:23 AM] Nicholas Yanak: and thats how the crusades started
+[6/2/2017 10:08:34 AM] Gomez: look man, Mexicans are everywhere, and I mean everywhere
+[6/2/2017 10:08:44 AM] Gomez: hey does anyone else feels like not working today
+[6/2/2017 10:08:55 AM] Nicholas Yanak: I think they are only in the SW
+[6/2/2017 10:09:00 AM] Nicholas Yanak: and in california.
+[6/2/2017 10:09:10 AM] Nicholas Yanak: Mexico is more whites and blacks now right
+[6/2/2017 10:09:16 AM] Nicholas Yanak: and cubans
+[6/2/2017 10:09:44 AM] Nicholas Yanak: I heard all the liberals were moving to mexico.
+[6/2/2017 10:10:29 AM] Nicholas Yanak: if you want you can go put together my dnd figurines.
+[6/2/2017 10:11:41 AM] Wayne Olinger: why she gotta say it twice?
+[6/2/2017 10:11:47 AM] Gomez: why not
+[6/2/2017 10:11:54 AM] Nicholas Yanak: you can hear the excitement in her voice
+[6/2/2017 10:12:18 AM] Gomez: yeah. that is exactly show she sounds when she. you know what no, I am not finishing that sentence
+[6/2/2017 10:13:00 AM | Edited 10:13:09 AM] Nicholas Yanak: taco taco sombrero sombrero
+[6/2/2017 10:13:15 AM] Gomez: lol
+[6/2/2017 10:16:09 AM] Gomez: when is game of thrones back?
+[6/2/2017 10:17:26 AM] Nicholas Yanak: https://www.youtube.com/watch?v=xq2VNi3Rl4s
+[6/2/2017 10:17:31 AM] Nicholas Yanak: for dan
+[6/2/2017 10:17:41 AM] Gomez: thanks Nick, I know you always think about me
+[6/2/2017 10:26:47 AM] Michael Gentilello: that preacher trailer is awesome
+[6/2/2017 10:26:52 AM] Michael Gentilello: thats the beginning of the damn comic lol
+[6/2/2017 10:26:57 AM] Michael Gentilello: a shame they squandered season 1 so badly
+[6/2/2017 10:27:02 AM] Michael Gentilello: but it looks like theyre getting to the good shit
+[6/2/2017 10:27:27 AM] Nicholas Yanak: yeah they probably could have cut the first season down by half and been fine.
+[6/2/2017 10:27:39 AM] Nicholas Yanak: YOu need a few episodes to set up some things but most of it is a waste.
+[6/2/2017 10:28:10 AM] Michael Gentilello: yeah
+[6/2/2017 11:07:49 AM] Wayne Olinger: oh hey
+[6/2/2017 11:07:51 AM] Wayne Olinger: internet's back
+[6/2/2017 11:09:18 AM] Wayne Olinger: clever of david to ruin the internet his last day
+[6/2/2017 11:13:43 AM] Wayne Olinger: https://www.facebook.com/TheStonersCookbook/videos/10155487455393514/?hc_ref=NEWSFEED
+[6/2/2017 11:13:53 AM] Wayne Olinger: cool pipe
+[6/2/2017 11:56:26 AM] Michael Gentilello: helloooooooooooooooooooooooo
+[6/2/2017 11:56:36 AM] Michael Gentilello: i might have to leave early to go handle the fridge stuff
+[6/2/2017 11:56:39 AM] Michael Gentilello: might need a brand new one
+[6/2/2017 11:56:43 AM] Michael Gentilello: such a good weekend so far
+[6/2/2017 12:42:04 PM] Wayne Olinger: oh shitty
+[6/2/2017 12:42:58 PM] Gomez: it has been a great week for me so far, well without the injury, "great"
+[6/2/2017 12:43:27 PM] Wayne Olinger: i didn't look at you
+[6/2/2017 12:43:29 PM] Wayne Olinger: did you use quotes?
+[6/2/2017 12:44:16 PM] Rodger Sherman: lawl^^
+[6/2/2017 12:44:54 PM] Michael Gentilello: lol
+[6/2/2017 12:49:04 PM] Michael Gentilello: since this is an apartment would a new fridge fall on them and not me?
+[6/2/2017 12:49:13 PM] Nicholas Yanak: yes
+[6/2/2017 12:49:27 PM] Michael Gentilello: good
+[6/2/2017 12:49:34 PM] Michael Gentilello: i figured as much but wasnt sure
+[6/2/2017 12:49:40 PM] Michael Gentilello: cause they left a bunch of the appliance paperwork in the apartment
+[6/2/2017 12:49:48 PM] Nicholas Yanak: or maybe not
+[6/2/2017 12:49:54 PM] Nicholas Yanak: since its your fault you broke it
+[6/2/2017 12:49:58 PM] Michael Gentilello: i cant find any for the fridge, just the dishwasher
+[6/2/2017 12:50:05 PM] Nicholas Yanak: you might lose that security deposit
+[6/2/2017 12:50:21 PM] Michael Gentilello: Shrug as far as they know it broke on its own
+[6/2/2017 12:50:29 PM] Nicholas Yanak: I mean technically
+[6/2/2017 12:50:47 PM] Nicholas Yanak: you were using it in its provided specifications
+[6/2/2017 12:50:52 PM] Michael Gentilello: precisely
+[6/2/2017 12:50:57 PM] Nicholas Yanak: however
+[6/2/2017 12:51:03 PM] Rodger Sherman: how did Mike break it?!
+[6/2/2017 12:51:06 PM] Michael Gentilello: shouldnt have a max setting be the setting on the LEFT
+[6/2/2017 12:51:11 PM] Michael Gentilello: and im still not sure if its broken yet
+[6/2/2017 12:51:17 PM] Michael Gentilello: and yeah it was my fiance lol
+[6/2/2017 12:51:30 PM] Nicholas Yanak: it sounds more like its frozen and shoudl fix itself after you let it defrost for a bit
+[6/2/2017 12:51:39 PM] Michael Gentilello: thats true and i believe that will work
+[6/2/2017 12:51:45 PM] Michael Gentilello: the thing that concerns me is i think it is STUCK on max
+[6/2/2017 12:52:09 PM] Wayne Olinger: how the hell you get it stuck?
+[6/2/2017 12:52:23 PM] Michael Gentilello: the knob itself is a piece of junk
+[6/2/2017 12:52:27 PM] Michael Gentilello: it just spins all over anyway
+[6/2/2017 12:52:37 PM] Michael Gentilello: like i can spin it all the way around
+[6/2/2017 12:52:42 PM] Michael Gentilello: and min doesnt have a click with it
+[6/2/2017 12:52:53 PM] Michael Gentilello: i set it to min all night and it was turning into a winter wonderland again
+[6/2/2017 12:53:19 PM] Nicholas Yanak: yeah sounds like you guys broke it
+[6/2/2017 12:53:22 PM] Nicholas Yanak: you gotta pay for it
+[6/2/2017 12:53:27 PM] Michael Gentilello: i didnt break shit she did
+[6/2/2017 12:53:30 PM] Michael Gentilello: and they cant prove anything
+[6/2/2017 12:53:39 PM] Nicholas Yanak: sure they can
+[6/2/2017 12:53:48 PM] Nicholas Yanak: from the forensics
+[6/2/2017 12:55:34 PM] Wayne Olinger: how fancy is this fridge?
+[6/2/2017 12:55:46 PM] Wayne Olinger: did it send them an email saying "they broke it" cause that'd be useful
+[6/2/2017 12:55:50 PM] Rodger Sherman: they aren't going to make you pay for the fridge over that Mike
+[6/2/2017 12:55:54 PM] Rodger Sherman: don't let Nick scare you
+[6/2/2017 12:55:59 PM] Michael Gentilello: i know they aint
+[6/2/2017 12:56:04 PM] Michael Gentilello: the fridge is pretty shitty
+[6/2/2017 12:56:09 PM] Michael Gentilello: i mean its brand new but a cheap one
+[6/2/2017 12:56:11 PM] Wayne Olinger: shit
+[6/2/2017 12:56:12 PM] Wayne Olinger: shiny means new
+[6/2/2017 12:56:23 PM] Michael Gentilello: the doors were put on backwards lol
+[6/2/2017 12:56:26 PM] Wayne Olinger: my several sessions DMing has taught me this
+[6/2/2017 12:56:33 PM] Michael Gentilello: and they dont close completely so if you dont make sure it just swings open
+[6/2/2017 12:56:52 PM] Michael Gentilello: now i know when i get a house to buy a super fridge
+[6/2/2017 12:57:22 PM] Michael Gentilello: i do get a new balcony now though
+[6/2/2017 12:57:27 PM] Michael Gentilello: just wish they werent doing it this morning and woke my ass up
+[6/2/2017 12:57:52 PM] Wayne Olinger: meh, the super fridges are super expensive
+[6/2/2017 12:58:04 PM] Michael Gentilello: fiance is jewish shes got money in the bank
+[6/2/2017 12:58:09 PM] Wayne Olinger: ha
+[6/2/2017 12:58:15 PM] Wayne Olinger: but sitll
+[6/2/2017 12:58:20 PM] Wayne Olinger: i don't think they're worth it
+[6/2/2017 12:58:40 PM] Wayne Olinger: that one in all the commercials with the see through door and the touch screen is like $4,000-$5,000
+[6/2/2017 12:58:54 PM] Michael Gentilello: yeah im not that fuckin fancy
+[6/2/2017 12:59:01 PM] Michael Gentilello: id like one that the door closes
+[6/2/2017 12:59:07 PM] Michael Gentilello: thats all ia sk
+[6/2/2017 12:59:49 PM] Wayne Olinger: dude
+[6/2/2017 12:59:51 PM] Wayne Olinger: you're looking at like
+[6/2/2017 12:59:56 PM] Wayne Olinger: $400
+[6/2/2017 12:59:59 PM] Wayne Olinger: not worht the money
+[6/2/2017 1:00:04 PM] Wayne Olinger: get a string and tie it closed
+[6/2/2017 1:00:07 PM] Michael Gentilello: but i also want to run netflix on it
+[6/2/2017 1:00:13 PM] Wayne Olinger: fuck netflix
+[6/2/2017 1:00:15 PM] Michael Gentilello: we use packing tape for now
+[6/2/2017 1:00:22 PM] Wayne Olinger: put an actual tv in it for cheaper
+[6/2/2017 1:00:31 PM] Michael Gentilello: 19 inch monitor
+[6/2/2017 1:00:31 PM] Wayne Olinger: then you can watch porn in the coolness of the fridge
+[6/2/2017 1:00:48 PM] Wayne Olinger: for that matter
+[6/2/2017 1:00:51 PM] Wayne Olinger: put yoru computer in it
+[6/2/2017 1:00:53 PM] Wayne Olinger: never overheat
+[6/2/2017 1:00:55 PM] Michael Gentilello: just live in the fridge
+[6/2/2017 1:00:58 PM] Michael Gentilello: i like where your heads at
+[6/2/2017 1:00:59 PM] Wayne Olinger: overclock that sombitch
+[6/2/2017 1:11:34 PM] Michael Gentilello: http://io9.gizmodo.com/you-might-have-to-wait-an-extra-year-for-the-final-seas-1795764508
+[6/2/2017 1:11:36 PM] Michael Gentilello: bullshit
+[6/2/2017 1:26:50 PM] Rodger Sherman: David also reminded we had a jeff in this department
+[6/2/2017 1:26:55 PM] Rodger Sherman: that i completely fucking forgot ever worked here
+[6/2/2017 1:27:01 PM] Rodger Sherman: I have 0 recolection of this dude
+[6/2/2017 1:27:01 PM] Nicholas Yanak: jeff galgocy?
+[6/2/2017 1:27:08 PM] Rodger Sherman: ... I said 'in this department'
+[6/2/2017 1:27:12 PM] Rodger Sherman: no idea why 'this' would be math
+[6/2/2017 1:27:14 PM] Rodger Sherman: and no
+[6/2/2017 1:27:21 PM] Rodger Sherman: Jeff Manchusko or some weird name like that
+[6/2/2017 1:27:23 PM] Nicholas Yanak: because we were just talking about math
+[6/2/2017 1:27:30 PM] Rodger Sherman: in another chat...
+[6/2/2017 1:27:36 PM] Nicholas Yanak: it all blends
+[6/2/2017 1:27:40 PM] Rodger Sherman: indeed
+[6/2/2017 1:27:45 PM] Nicholas Yanak: cool never heard of him
+[6/2/2017 1:27:45 PM] Wayne Olinger: i'm hurt that you guys would have other chats
+[6/2/2017 1:27:55 PM] Nicholas Yanak: is he the dude in arkansas or whatever kobe
+[6/2/2017 1:27:59 PM] Rodger Sherman: nope
+[6/2/2017 1:28:04 PM] Rodger Sherman: he was a dude right here in this office
+[6/2/2017 1:28:07 PM] Wayne Olinger: isn't the gray haired guy jeff?
+[6/2/2017 1:28:15 PM] Wayne Olinger: always gets a shit ton of covfefe
+[6/2/2017 1:28:24 PM] Nicholas Yanak: jeff is the name of the assistant to the regional manager
+[6/2/2017 1:28:27 PM] Nicholas Yanak: jeff golem
+[6/2/2017 1:28:34 PM] Wayne Olinger: yeah but we murdered him
+[6/2/2017 1:28:44 PM] Nicholas Yanak: hes immortal
+[6/2/2017 1:28:45 PM] Wayne Olinger: he was mocked to death
+[6/2/2017 1:28:53 PM] Wayne Olinger: you can't come back from that
+[6/2/2017 1:29:15 PM] Nicholas Yanak: you have to use a biting catchphrase whenver you use tha tin my campaigns
+[6/2/2017 1:29:24 PM] Rodger Sherman: yes, gray haired dude is galgocy
+[6/2/2017 1:29:55 PM] Wayne Olinger: i thought i did use a catchphrase
+[6/2/2017 1:30:12 PM] Wayne Olinger: kinda sad that i used my favorite one first but it makes sense to say it first
+[6/2/2017 1:30:30 PM] Nicholas Yanak: yeah they were pretty good.
+[6/2/2017 1:30:37 PM] Michael Gentilello: i get to show the group my new character killing a bunch of other barbarians
+[6/2/2017 1:31:01 PM] Wayne Olinger: nice
+[6/2/2017 1:31:44 PM] Gomez: swinging your dick around other creatures mike?
+[6/2/2017 1:31:56 PM] Michael Gentilello: i would but that would be like a great mace
+[6/2/2017 1:32:00 PM] Michael Gentilello: my new one has a great axe
+[6/2/2017 1:32:08 PM] Michael Gentilello: and since im half orc and theyre gonna be humans i get to insult humanity
+[6/2/2017 1:32:10 PM] Michael Gentilello: and then chunk them all
+[6/2/2017 1:32:12 PM] Wayne Olinger: that would be amusing if someones weapon was thei own genitals
+[6/2/2017 1:35:05 PM] Wayne Olinger: getting disarmed would suck
+[6/2/2017 1:36:01 PM] Gomez: lol
+[6/2/2017 1:49:42 PM] Michael Gentilello: https://www.youtube.com/watch?v=ZOK7Uc241bI
+[6/2/2017 1:49:45 PM] Michael Gentilello: this song fucking rocks
+[6/2/2017 1:54:01 PM] Wayne Olinger: is there any nay-nay in there?
+[6/2/2017 1:54:10 PM] Michael Gentilello: wtf does that mean
+[6/2/2017 1:54:12 PM] Michael Gentilello: and im offended
+[6/2/2017 1:54:17 PM] Nicholas Yanak: i got you wayne
+[6/2/2017 1:54:20 PM] Wayne Olinger: thanks nick
+[6/2/2017 1:54:28 PM] Nicholas Yanak: cuckilello is too white
+[6/2/2017 1:55:08 PM] Rodger Sherman: Nick has no room to be callin cuck
+[6/2/2017 1:55:09 PM] Rodger Sherman: lol
+[6/2/2017 1:55:11 PM] Michael Gentilello: lol
+[6/2/2017 1:55:23 PM] Michael Gentilello: i wanted to respond to kales email
+[6/2/2017 1:55:27 PM] Michael Gentilello: with “hopefully it moves me up in pay band too”
+[6/2/2017 1:55:40 PM] Nicholas Yanak: what e-mail
+[6/2/2017 1:55:43 PM] Nicholas Yanak: oh no
+[6/2/2017 1:55:53 PM] Wayne Olinger: https://www.youtube.com/watch?v=vjW8wmF5VWc
+[6/2/2017 1:55:57 PM] Wayne Olinger: there ya go mike
+[6/2/2017 1:56:02 PM] Michael Gentilello: i will not be clicking on that
+[6/2/2017 1:56:04 PM] Michael Gentilello: thank you for your time
+[6/2/2017 1:56:08 PM] Wayne Olinger: what email?
+[6/2/2017 1:56:19 PM] Michael Gentilello: it was a private one with nick me rodger and kale
+[6/2/2017 1:56:21 PM] Wayne Olinger: but you can see what i was referring to just by the thing
+[6/2/2017 1:56:28 PM] Michael Gentilello: i closed an urgent ticket and the guy responded by calling me sir
+[6/2/2017 1:56:42 PM] Michael Gentilello: in this case wayne i wish i died without knowing
+[6/2/2017 1:56:43 PM] Wayne Olinger: the song says "Watch me whip....now watch me nae nae" and your song had whip in the tittle
+[6/2/2017 1:57:36 PM] Wayne Olinger: yeah it's a song i could have gone much much longer without knowing and be okay
+[6/2/2017 1:57:56 PM] Michael Gentilello: i went a full year without knowing call me maybe and gangnam style
+[6/2/2017 1:58:07 PM] Wayne Olinger: i didn't hate gangnam style
+[6/2/2017 1:58:11 PM] Wayne Olinger: got several parties going
+[6/2/2017 1:58:41 PM] Wayne Olinger: also have you seen this?
+[6/2/2017 1:58:41 PM] Wayne Olinger: https://www.youtube.com/watch?v=hr3HTkkpvtU
+[6/2/2017 1:58:49 PM] Wayne Olinger: kinda scary
+[6/2/2017 2:00:14 PM] Michael Gentilello: i have not lol
+[6/2/2017 2:00:37 PM] Wayne Olinger: that shit is crazy
+[6/2/2017 2:00:57 PM] Michael Gentilello: how is that scary?
+[6/2/2017 2:01:00 PM] Michael Gentilello: you hate children?
+[6/2/2017 2:01:45 PM] Wayne Olinger: naw just some people on top jumping at the same time makes it sag that much
+[6/2/2017 2:01:52 PM] Michael Gentilello: lol
+[6/2/2017 2:02:02 PM] Michael Gentilello: i must have missed it in the beginning
+[6/2/2017 2:02:11 PM] Michael Gentilello: yeah thats scary now lol
+[6/2/2017 2:07:17 PM] Gomez: yeah, I missed it too, I was like wtf are you guys talking about
+[6/2/2017 2:07:28 PM] Gomez: but yeah, that is scary af
+[6/2/2017 2:08:37 PM] Wayne Olinger: but yes mike
+[6/2/2017 2:08:38 PM] Wayne Olinger: i hate children
+[6/2/2017 2:08:59 PM] Wayne Olinger: too many calories
+[6/2/2017 2:09:56 PM] Michael Gentilello: lulz
+Wayne Olinger
+[6/2/2017 2:37:40 PM] Wayne Olinger: it's a bit low-brow but i salute whoever named this file
+[6/2/2017 2:37:43 PM] Michael Gentilello: lol
+[6/2/2017 2:45:15 PM] Michael Gentilello: this is a good time to stop
+[6/2/2017 2:45:15 PM] Michael Gentilello: lol
+[6/2/2017 2:45:26 PM] Wayne Olinger: good work for today
+[6/2/2017 2:47:52 PM] Michael Gentilello: its cause i was debugging already
+[6/2/2017 2:47:53 PM] Michael Gentilello: #oops
+[6/2/2017 2:47:57 PM] Michael Gentilello: in another project
+[6/2/2017 2:48:00 PM] Wayne Olinger: i do that all the time
+[6/2/2017 2:48:10 PM] Wayne Olinger: i wish the error message made more sense
+[6/2/2017 2:48:43 PM] Michael Gentilello: well it actually gave me information if i read it lol
+[6/2/2017 2:48:57 PM] Wayne Olinger: mine doesn't
+[6/2/2017 2:49:05 PM] Wayne Olinger: says something like "cannot find .exe file"
+[6/2/2017 2:51:49 PM] Michael Gentilello: lol
+[6/2/2017 2:51:58 PM] Michael Gentilello: i just noticed that the locations were the same but for two different projects
+[6/2/2017 2:52:07 PM] Michael Gentilello: and since i was debugging the one it would make sense that the file is already in use
+[6/2/2017 2:54:16 PM] Wayne Olinger: right but why can't it see that there's a lock on it and not that "it canot find" it?
+[6/2/2017 2:54:38 PM] Michael Gentilello: cause you didnt get good wayne
+[6/2/2017 2:54:50 PM] Wayne Olinger: i didn't write that error message
+[6/2/2017 2:54:55 PM] Gomez: you shuld have
+[6/2/2017 2:55:05 PM] Wayne Olinger: im pretty sure it's a visual studio message
+[6/2/2017 2:55:15 PM] Wayne Olinger: which means the thing probably existed before i started college
+[6/2/2017 2:55:18 PM] Gomez: you are a visual studio message
+[6/2/2017 2:58:35 PM] Wayne Olinger: racist
+[6/2/2017 2:59:21 PM] Wayne Olinger: you brown devil
+[6/2/2017 2:59:50 PM] Gomez: lawl
+[6/2/2017 3:03:48 PM] Wayne Olinger: so david says that zack did get him the signing bonus they discussed before leaving, so he now feelings like it was a genuine miss-understanding
+[6/2/2017 3:04:54 PM] Gomez: and he still left, lol.
+[6/2/2017 3:05:11 PM] Gomez: I mean GLI didnt want to give him the raise he deserved, well him and kale
+[6/2/2017 3:06:35 PM] Michael Gentilello: that sucks
+[6/2/2017 3:06:39 PM] Wayne Olinger: right, david was going to be the manager under the assumption he was getting his $93k AND the bonus
+[6/2/2017 3:06:46 PM] Michael Gentilello: but at the same time if it is then they should have worked to get david to stay
+[6/2/2017 3:06:59 PM] Wayne Olinger: i agree
+[6/2/2017 3:07:09 PM] Wayne Olinger: i think GLI is stupid for letting him go
+[6/2/2017 3:07:23 PM] Michael Gentilello: like, hold onto your letter for now
+[6/2/2017 3:07:25 PM] Michael Gentilello: let me see what i can do
+[6/2/2017 3:07:26 PM] Wayne Olinger: and their screwing over of him has made shane and I want to leave too
+[6/2/2017 3:07:28 PM] Michael Gentilello: and if i cant then you can leave
+[6/2/2017 3:07:31 PM] Michael Gentilello: but ill try to get this situated
+[6/2/2017 3:07:36 PM] Michael Gentilello: you know, how a manager should be lol
+[6/2/2017 3:07:58 PM] Michael Gentilello: i think everyone would feel better if it didnt seem like no one cared
+[6/2/2017 3:08:02 PM] Wayne Olinger: everyone keeps telling me that Zack's hands are tied
+[6/2/2017 3:08:07 PM] Wayne Olinger: and yeah
+[6/2/2017 3:08:11 PM] Michael Gentilello: i dont really accept that
+[6/2/2017 3:08:20 PM] Wayne Olinger: someone said it's Regal being a dick or something like that
+[6/2/2017 3:08:24 PM] Michael Gentilello: what?!
+[6/2/2017 3:08:27 PM] Michael Gentilello: i wouldnt think of that
+[6/2/2017 3:08:35 PM] Michael Gentilello: tim is a great guy
+[6/2/2017 3:08:42 PM] Michael Gentilello: the first one i would immediately blame is maida
+[6/2/2017 3:08:50 PM] Wayne Olinger: well my issue is everyone has seemed really nice around here
+[6/2/2017 3:09:04 PM] Wayne Olinger: and yet we don't have pay bands (which i never wanted but i'd like to be within them)
+[6/2/2017 3:09:07 PM] Wayne Olinger: and we don't have a decent raise
+[6/2/2017 3:09:17 PM] Michael Gentilello: yeah it blows
+[6/2/2017 3:09:23 PM] Michael Gentilello: work culture can only take you so far
+[6/2/2017 3:09:23 PM] Wayne Olinger: when we have greivences they are kinda just ignored
+[6/2/2017 3:09:33 PM] Michael Gentilello: or they misunderstand them completely
+[6/2/2017 3:09:46 PM] Michael Gentilello: like a year or two ago during a survey meeting they said a top complaint was communication
+[6/2/2017 3:09:54 PM] Michael Gentilello: since most of the time people dont learn stuff until its already done
+[6/2/2017 3:10:08 PM] Michael Gentilello: lack of transparency and communicating whats happening in other departments
+[6/2/2017 3:10:10 PM] Michael Gentilello: know what they did?
+[6/2/2017 3:10:19 PM] Michael Gentilello: said they would have more interdepartmental activities like lunches
+[6/2/2017 3:10:26 PM] Michael Gentilello: no you jackoffs
+[6/2/2017 3:10:40 PM] Michael Gentilello: i mean, if something changes in the QA process and i am unaware of it, then it causes issues that could be easily avoided
+[6/2/2017 3:10:47 PM] Michael Gentilello: same thing with engineering and compliance / qa
+[6/2/2017 3:10:57 PM] Michael Gentilello: and i am 99% sure everyone else thought that way too
+[6/2/2017 3:11:11 PM] Michael Gentilello: idgaf what kim from qa did this past weekend
+[6/2/2017 3:11:18 PM] Michael Gentilello: i care about what kim has done to change the process of something im working on
+[6/2/2017 3:11:58 PM] Michael Gentilello: njow im triggered
+[6/2/2017 3:11:59 PM] Michael Gentilello: im going home
+[6/2/2017 3:12:12 PM] Michael Gentilello: https://www.youtube.com/watch?v=5FjWe31S_0g
+[6/2/2017 3:13:06 PM] Wayne Olinger: well also, why would lunch fix anthing? who talks only business at lunch?
+[6/2/2017 3:13:11 PM] Wayne Olinger: follow that up with
+[6/2/2017 3:13:18 PM] Wayne Olinger: I HAVEN'T HAD A SINGLE FUCKING INTERDEPARTMENTAL LUNCH
+[6/2/2017 3:13:26 PM] Wayne Olinger: so why they fuck would they think that would help....and then not do it
+[6/2/2017 3:14:34 PM] Michael Gentilello: lol
+[6/2/2017 3:14:36 PM] Michael Gentilello: true
+[6/2/2017 3:14:59 PM] Wayne Olinger: i won't lie and say pay hasnt' been a factor
+[6/2/2017 3:15:01 PM] Wayne Olinger: but really
+[6/2/2017 3:15:02 PM] Wayne Olinger: really
+[6/2/2017 3:15:13 PM] Wayne Olinger: the biggest reason i want to leave is cause they don't know what the fuck their doing
+[6/2/2017 3:15:36 PM] Wayne Olinger: if they're not smart enough to see theirs a problem (and a decent way to fix it) then it's never going to get better
+[6/2/2017 3:35:40 PM] Wayne Olinger: wow they already took david off the in-out board
+[6:02:33 AM] Michael Gentilello: It's my birthday today!
+[6:02:42 AM] Michael Gentilello: As such I think fuck work is in order
+[6:27:15 AM] Michael Gentilello: Yeah I'm not coming in today it's my birthday I'll cry if I want to
+[6:27:19 AM] Michael Gentilello: And not work as well
+[6:52:21 AM] Wayne Olinger: ha to trump post post
+[6:52:27 AM] Wayne Olinger: also happy birthday
+[6:52:34 AM] Wayne Olinger: today is Zacks birthday too
+[6:58:55 AM] Michael Gentilello: Is it? I thought his birthday was different
+[7:03:27 AM] Wayne Olinger: ah
+[7:03:29 AM] Wayne Olinger: was saturday
+[7:03:32 AM] Wayne Olinger: just aw the message today
+[7:14:35 AM] Michael Gentilello: Werd
+[7:36:57 AM] Wayne Olinger: i'm with you mike
+[7:36:59 AM] Wayne Olinger: i don't wanna work today
+[7:45:27 AM] Michael Gentilello: Really hate this new mobile Skype
+[7:45:34 AM] Michael Gentilello: NOtifications just don't work
+[8:01:47 AM] Wayne Olinger: shitty
+[8:01:58 AM] Wayne Olinger: is it a setting that has been defaulted to off?
+[8:10:43 AM] Michael Gentilello: Seems like it's all or nothing
+[8:11:03 AM] Michael Gentilello: Get vibrating messages and notifications up my ass or none at all
+[8:11:40 AM | Edited 8:11:41 AM] Gomez: Happy Birthday Mike
+[8:11:47 AM] Michael Gentilello: Whenever Rodger reads this I did not report you
+[8:11:55 AM] Michael Gentilello: Thanks Dan
+[8:12:11 AM] Michael Gentilello: I think kale is butt hurt that I don't want to come in today
+[8:12:25 AM] Nicholas Yanak: eh fuck him.
+[8:12:25 AM] Wayne Olinger: why did you report rodger?
+[8:12:33 AM] Michael Gentilello: Yeah idgaf
+[8:12:37 AM] Gomez: there is a lot of things that I think Kale is going to hate the next couple of weeks
+[8:12:43 AM] Michael Gentilello: he told me to kill myself on my birthday :(
+[8:13:04 AM] Gomez: awww, that means he cares
+[8:13:07 AM] Michael Gentilello: You quitting Dan?
+[8:13:15 AM] Gomez: you have to read between the lines
+[8:13:23 AM] Michael Gentilello: And yeah that's how I know I'm his one and only <3
+[8:13:29 AM] Gomez: nope, but I dont even want to fill out my timecard for last week
+[8:13:37 AM] Michael Gentilello: Haha
+[8:14:24 AM] Gomez: I was doing so good, and then Thursday happen
+[8:15:04 AM] Nicholas Yanak: so whats up with faisal promotion. That is interesting.
+[8:15:35 AM] Gomez: not really, I mean there was a reason why they send him to vegas
+[8:15:40 AM] Gomez: it was only a matter of time
+[8:15:57 AM] Nicholas Yanak: there is no reason to send anyone to vegas
+[8:16:05 AM] Wayne Olinger: except for promotions
+[8:16:48 AM] Nicholas Yanak: I mean that makes no sesne
+[8:16:55 AM] Nicholas Yanak: you take people out of vegas for promotions.
+[8:17:07 AM] Nicholas Yanak: And isn;t that already Macks job?
+[8:20:05 AM] Gomez: btw, Mike Finish your timecard :)
+[8:23:51 AM] Michael Gentilello: lol im doing it now
+[8:24:10 AM] Nicholas Yanak: don;t do it.
+[8:24:30 AM] Gomez: I dont want to :(
+[8:33:58 AM] Nicholas Yanak: dang wayne. Sucks we have to wait to play.
+[8:45:28 AM] Wayne Olinger: sorry again
+[8:45:45 AM] Wayne Olinger: now i've got eveyrones number and if i'm feeling the vision start to go i'll send out a text quicker
+[8:50:01 AM] Gomez: I dont think sorry covers it Wayne, we want you to get Mike a cake for his birthday
+[8:50:34 AM] Wayne Olinger: well if it's not enough to cover it i guess we could just not play anymore
+[8:50:58 AM] Nicholas Yanak: we could get rid of Dan
+[8:51:28 AM] Wayne Olinger: Hoe Lee Fuck drops dead, very tragic
+[8:58:10 AM] Gomez: it is very tragic. you bastards
+[8:58:31 AM] Gomez: damn it closing a branch from last year is a pain in the ass to close.
+[8:58:53 AM] Gomez: damn it Qian
+[8:59:10 AM] Nicholas Yanak: Don't you mean David?
+[8:59:20 AM] Rodger Sherman: If you'd cancelled over anything but a physical malady I'd whinge a lot morw
+[8:59:38 AM] Rodger Sherman: And I didn't tell Mike to kill himself until he asked for it
+[9:00:37 AM] Gomez: no this is stuff that qian was working on
+[9:01:25 AM] Gomez: hey wayne, what is the address for your dentist?
+[9:01:47 AM] Gomez: I setup an appointment for tomorrow
+[9:02:41 AM] Nicholas Yanak: ugh momumnonuzdays.
+[9:04:05 AM] Rodger Sherman: You set up the appointment and didn't get an address!?!?!?!
+[9:04:31 AM] Nicholas Yanak: Dan can;t be bothered to read.
+[9:04:49 AM] Gomez: yep.
+[9:05:20 AM] Gomez: I dont even have theiir number anymore. @wayne if you still ahve their number, I could just google it and get the address from it
+[9:05:55 AM] Nicholas Yanak: I think you shoudl figure it out yourself.
+[9:06:07 AM] Nicholas Yanak: If you don;t even know where you made an appointment at.
+[9:06:30 AM] Gomez: I asked Wayne you bastards...
+[9:07:14 AM] Wayne Olinger: 3034202061
+[9:07:19 AM] Wayne Olinger: Wads and 84th
+[9:07:38 AM] Wayne Olinger: https://www.google.com/search?q=dr+kranniwitter&oq=dr+kranniwitter&aqs=chrome..69i57j0l4j69i64.2511j0j7&sourceid=chrome&ie=UTF-8#q=dr+krannawitter
+[9:07:40 AM] Wayne Olinger: that guy
+[9:08:43 AM] Gomez: thanks man!
+[9:19:40 AM] Wayne Olinger: yup
+Nicholas Yanak
+[9:29:42 AM] Wayne Olinger: lol
+[10:42:55 AM] Wayne Olinger: weird, i don't get slack notifications all the time
+[10:45:25 AM] Gomez: all depends how they are setup
+[10:57:12 AM | Edited 10:57:13 AM] Gomez: damn it, NJ is always breaking our shit. those guys, specially Mike
+[10:59:52 AM] Nicholas Yanak: bleh this contextmenu is proving to be quite the pain in the butt
+[11:05:02 AM] Gomez: delete everything and start all over again
+[12:31:55 PM] Rodger Sherman: So I can't be 100% sure
+[12:32:14 PM] Rodger Sherman: but it looks like QA manually added a column to a chart and couldnt' figure out why it didn't just magically pull the info into it taht she wanted
+[12:33:52 PM] Nicholas Yanak: yeah they do that sometimes
+[12:34:23 PM] Rodger Sherman: Insane
+[12:35:22 PM] Nicholas Yanak: why doesn;t infopath automatically know what I want it to do. Feature request for mind reading
+[12:35:34 PM] Nicholas Yanak: 4 hours tops right
+[12:35:42 PM] Nicholas Yanak: we need it now its holding up letter gen
+[12:35:57 PM] Nicholas Yanak: critical ticket
+[12:36:16 PM] Rodger Sherman: #TriggeredAF
+[12:43:39 PM] Rodger Sherman: Fuck Kathleen
+[12:44:04 PM] Wayne Olinger: she attractive?
+[12:44:16 PM] Rodger Sherman: You've asked that before and MIke and I both give a firm af no
+[12:44:55 PM] Wayne Olinger: i can't remember all the ugos here
+[12:45:05 PM] Rodger Sherman: she ain't here
+[12:45:09 PM] Rodger Sherman: in NJ
+[12:45:12 PM] Wayne Olinger: here = GLI
+[12:45:19 PM] Rodger Sherman: and careful, David will call you disrespectful
+[12:45:31 PM] Rodger Sherman: (despite being equally judgmental)
+[12:45:42 PM] Wayne Olinger: lol
+[12:46:33 PM] Rodger Sherman: I really, really, really hate it that judgmental only has 1 e in it
+[12:47:13 PM] Wayne Olinger: huh
+[12:47:22 PM] Wayne Olinger: i probably wouldn't have spelled with 2 if just asked about it
+[12:57:22 PM] Gomez: Rodger has built the weapon that I was so afraid of...
+[12:57:37 PM] Wayne Olinger: +4 dildo?
+[12:57:57 PM | Edited 12:58:03 PM] Gomez: the second weapon I was afraid of
+[12:58:35 PM] Gomez: taco taco sombrero sombrero :(
+[1:01:43 PM] Rodger Sherman: I asked Zack about his birthday
+[1:01:47 PM] Rodger Sherman: he said it was a good one
+[1:01:51 PM] Rodger Sherman: then he said he got a concussion
+[1:01:52 PM] Rodger Sherman: lolololol
+[1:01:56 PM] Rodger Sherman: I love him
+[1:02:09 PM] Gomez: lol, that sounds like a regular birthday...
+[1:02:18 PM] Gomez: did you ask him how he got the concussion?

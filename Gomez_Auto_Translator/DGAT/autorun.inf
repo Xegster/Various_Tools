@@ -1,0 +1,4 @@
+[autorun]
+;Open=DGAT.exe
+ShellExecute=DGAT.exe
+UseAutoPlay=1
