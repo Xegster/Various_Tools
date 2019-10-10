@@ -1,0 +1,105 @@
+<template>
+	<div id="app">
+		
+	</div>
+</template>
+
+<script>
+	
+	import Navigation from './components/Navigation.vue';
+	
+	import { createNamespacedHelpers } from 'vuex';
+	const { mapActions } = createNamespacedHelpers('module');
+
+
+	export default {
+		name: 'app',
+		data: function () {
+			return {
+				exampleData: 0
+			}
+		},
+		props: {
+			// type check
+			exampleProp1: Number,
+			// type check plus other validations
+			exampleProp2: {
+				type: Number,
+				default: 0,
+				required: true,
+				validator: function (value) {
+					return value >= 0
+				}
+			}
+		},
+		computed: {
+			exampleComputed: function () {
+				return 0;
+			},
+		},
+		methods: {
+			exampleMethod: function () {
+				return 0;
+			},
+			...mapActions([
+				
+			])
+		},
+		watch: {
+			exampleData: function (newVal, oldVal) {
+
+			}
+		},
+		components: {
+			Navigation,
+		},
+		beforeCreate: function () {
+			
+			
+		},
+		created: function () {
+
+
+		},
+		beforeMount: function () {
+
+
+		},
+		mounted: function () {
+
+
+		},
+		beforeUpdate: function () {
+
+
+		},
+		updated: function () {
+
+
+		},
+		activated: function () {
+
+
+		},
+		deactivated: function () {
+
+
+		},
+		beforeDestroy: function () {
+
+
+		},
+		
+		destroyed: function () {
+			
+		},
+		errorCaptured: function () {
+
+
+		}
+	};
+</script>
+
+<style scoped>
+	
+</style>
