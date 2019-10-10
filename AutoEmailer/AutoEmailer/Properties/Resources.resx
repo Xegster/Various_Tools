@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DefaultEmail" xml:space="preserve">
+    <value>&lt;html&gt;&lt;head&gt;&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+
+&lt;title&gt;GLI Email Signature&lt;/title&gt;
+&lt;style type="text/css"&gt;
+body,td,th {
+    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+    font-style: normal;
+    font-size: 14px;
+    color: #343434;
+}
+body {
+    background-color: #FFFFFF;
+}
+a:link {
+    color: #152f55;
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+    color: #152f55;
+}
+a:hover {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;table width="556" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td width="126" height="115" rowspan="3" bgcolor="#FFFFFF"&gt;&lt;img src="./GLI Email Signature_files/x-graphic-side-long-version.png" alt="" width="119" height="120" align="middle"&gt;&lt;/td&gt;
+      &lt;td width="281" rowspan="2" align="left" valign="middle" style="font-family: &amp;#39;Gill Sans&amp;#39;, &amp;#39;Gill Sans MT&amp;#39;, &amp;#39;Myriad Pro&amp;#39;, &amp;#39;DejaVu Sans Condensed&amp;#39;, Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; color: #152f55; line-height: 18px;"&gt;&lt;strong&gt;First Last | &lt;/strong&gt;&lt;span style="font-style: italic"&gt;Title&lt;/span&gt;&lt;br&gt;
+        &lt;strong&gt;Phone:&lt;/strong&gt; 000.000.0000 Ext. 0000&lt;br&gt;
+        &lt;span style="font-style: normal"&gt;&lt;strong&gt;Direct:&lt;/strong&gt;&lt;/span&gt; 000.000.0000 | &lt;strong&gt;Cell:&lt;/strong&gt; 000.000.0000&lt;br&gt;
+      &lt;strong&gt;&lt;a href="http://gaminglabs.com/" target="_blank"&gt;gaminglabs.com&lt;/a&gt;&lt;/strong&gt; | #GamingLabs&lt;/td&gt;
+      &lt;td width="153" height="65" align="center" style="text-align: center"&gt;&lt;a href="https://gaminglabs.com/" target="_blank"&gt;&lt;img src="./GLI Email Signature_files/x-graphic-GLI-logo-short-version.png" alt="" width="135" height="57" align="absmiddle"&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td width="153" height="33" align="right" valign="middle"&gt;&lt;table width="90" border="0" align="center" cellpadding="2" cellspacing="2"&gt;
+        &lt;tbody&gt;
+          &lt;tr&gt;
+            &lt;td width="19"&gt;&lt;a href="https://www.linkedin.com/company/gaming-laboratories-international" target="_blank"&gt;&lt;img src="./GLI Email Signature_files/x-graphic-sm-icons-LI.png" width="19" height="19" alt=""&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;td width="19"&gt;&lt;a href="https://twitter.com/GamingLabsInt" target="_blank"&gt;&lt;img src="./GLI Email Signature_files/x-graphic-sm-icons-TW.png" width="19" height="19" alt=""&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;td width="20"&gt;&lt;a href="https://www.facebook.com/GamingLabsInt/" target="_blank"&gt;&lt;img src="./GLI Email Signature_files/x-graphic-sm-icons-FB.png" width="20" height="19" alt=""&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;td width="8"&gt;&lt;a href="https://www.instagram.com/GamingLabsInt/" target="_blank"&gt;&lt;img src="./GLI Email Signature_files/x-graphic-sm-icons-IN.png" width="20" height="19" alt=""&gt;&lt;/a&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td height="21" colspan="2" align="right" valign="bottom"&gt;&lt;img src="./GLI Email Signature_files/x-graphic-bottom-385x20.png" alt="" width="434" height="21" align="absbottom"&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="GLI_Email_Signature" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GLI Email Signature.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="x_graphic_bottom_385x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GLI Email Signature_files\x-graphic-bottom-385x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="x_graphic_GLI_logo_short_version" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GLI Email Signature_files\x-graphic-GLI-logo-short-version.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="x_graphic_side_long_version" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GLI Email Signature_files\x-graphic-side-long-version.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="x_graphic_sm_icons_FB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GLI Email Signature_files\x-graphic-sm-icons-FB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="x_graphic_sm_icons_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GLI Email Signature_files\x-graphic-sm-icons-IN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="x_graphic_sm_icons_LI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GLI Email Signature_files\x-graphic-sm-icons-LI.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="x_graphic_sm_icons_TW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GLI Email Signature_files\x-graphic-sm-icons-TW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>
