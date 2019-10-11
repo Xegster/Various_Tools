@@ -9,7 +9,7 @@
 	import Navigation from './components/Navigation.vue';
 	
 	import { createNamespacedHelpers } from 'vuex';
-	const { mapActions } = createNamespacedHelpers('module');
+	const { mapGetters, mapActions } = createNamespacedHelpers('module');
 
 
 	export default {
@@ -36,6 +36,9 @@
 			exampleComputed: function () {
 				return 0;
 			},
+			...mapGetters([
+				
+			])
 		},
 		methods: {
 			exampleMethod: function () {
