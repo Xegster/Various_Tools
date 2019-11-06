@@ -26,7 +26,7 @@
 			exampleProp2: {
 				type: Number,
 				default: 0,
-				required: true,
+				required: false,
 				validator: function (value) {
 					return value >= 0
 				}
