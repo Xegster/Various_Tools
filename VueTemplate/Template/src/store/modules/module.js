@@ -8,7 +8,7 @@ const getters = {
 		return { ...state, ...getters, param1, param2 };
 	},
 
-}
+};
 const actions = {
 	exampleAction: ({ commit, state, getters, dispatch }, payload) => {
 		//commit for mutations
@@ -33,14 +33,14 @@ const actions = {
 
 		});
 	}
-}
+};
 
 const mutations = {
 	exampleMutation: (state, payload) => {
 		state = payload;
-	},
+	}
 
-}
+};
 
 export default {
 	namespaced: true,
@@ -48,7 +48,7 @@ export default {
 	getters,
 	actions,
 	mutations
-}
+};
 
 
 

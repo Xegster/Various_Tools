@@ -36,6 +36,14 @@
 			exampleComputed: function () {
 				return 0;
 			},
+			exampleGetSet: {
+				get: function () {
+					return 0;
+				},
+				set: function (sel) {
+					let val = sel;
+				}
+			},
 			...mapGetters([
 				
 			])
