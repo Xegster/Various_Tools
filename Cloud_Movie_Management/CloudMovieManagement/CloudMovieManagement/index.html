@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <SCRIPT LANGUAGE="JavaScript">
+        window.alert("Test");
+        Components.utils.import("resource://gre/modules/osfile.jsm");
+        window.alert("Test2");
+        // Open iterator
+        let iterator = new OS.File.DirectoryIterator("C:\\");//\Users\\xegst\\OneDrive\\Desktop\\Xegster\\Development\\Various_Tools\\Cloud_Movie_Management");
+        window.alert(iterator);
+        let subdirs = [];
+        // Iterate through the directory
+        let promise = iterator.forEach(
+            function onEntry(entry) {
+                if (entry.isDir) {
+                    subdirs.push(entry);
+                }
+            }
+        );
+
+        //// Finally, close the iterator
+        //promise.then(
+        //    function onSuccess() {
+        //        iterator.close();
+        //        return subdirs;
+        //    },
+        //    function onFailure(reason) {
+        //        iterator.close();
+        //        throw reason;
+        //    }
+        //);
+        //window.alert(subdirs[0]);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
