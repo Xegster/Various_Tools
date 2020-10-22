@@ -67,7 +67,7 @@
 				value = value.toString()
 				return value.charAt(0).toUpperCase() + value.slice(1)
 			}//{{ message | capitalize }}
-		}
+		},
 		components: {
 			Navigation,
 		},
