@@ -34,6 +34,17 @@ while(begin_x = next_x && begin_y = next_y)
 }
 return
 
+#+s::
+MouseGetPos, begin_x, begin_y
+MouseGetPos, next_x, next_y
+while(begin_x = next_x && begin_y = next_y)
+{
+	MouseClick, left, , , 2
+	MouseGetPos, next_x, next_y
+	Sleep, 5000
+}
+return
+
 #x::
 MouseGetPos, begin_x, begin_y
 MouseGetPos, next_x, next_y
