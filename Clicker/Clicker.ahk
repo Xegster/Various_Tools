@@ -34,7 +34,7 @@ while(begin_x = next_x && begin_y = next_y)
 }
 return
 
-#+s::
+#^s::
 MouseGetPos, begin_x, begin_y
 MouseGetPos, next_x, next_y
 while(begin_x = next_x && begin_y = next_y)
