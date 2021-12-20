@@ -71,5 +71,22 @@ while(cur_x = initial_x && cur_y = initial_y)
 }
 return
 
+#g::
+MouseGetPos, initial_x, initial_y
+MouseGetPos, cur_x, cur_y
+start_x := 1560
+start_y := 330
+end_x := 160
+end_y := 680
+MouseMove, end_x, end_y
+while(cur_x = end_x && cur_y = end_y)
+{
+	MouseClick, left, start_x, start_y, 1
+	Sleep 100
+	MouseClick, left, end_x, end_y, 1
+	Sleep 100
+	MouseGetPos, cur_x, cur_y
+}
+return
 
  

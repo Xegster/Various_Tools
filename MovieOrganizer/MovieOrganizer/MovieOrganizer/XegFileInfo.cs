@@ -77,6 +77,9 @@ namespace MovieOrganizer
 			var noEmpty = noQualityTokens.Where(p => !string.IsNullOrWhiteSpace(p)).ToArray();
 			var trimmed = noEmpty.Select(ne => ne.Trim()).ToArray();
 			Keywords = SplitByCasing(trimmed);
+			if (Keywords == null || Keywords.Length == 0)
+				Keywords = CheckSpecialCases();
+
 
 			foreach (var value in AllQualities)
 			{
@@ -102,6 +105,31 @@ namespace MovieOrganizer
 			}
 			Viewed = FullName.ToLower().Contains("viewed") || Quality != Quality.NA;
 
+		}
+
+		private string[] CheckSpecialCases()
+		{
+			if (FileNameWithoutExtension.StartsWith("xvideos.com_"))
+			{
+				var workingCopy = FileNameWithoutExtension.Replace("xvideos.com_", "");
+				if (workingCopy.StartsWith("."))
+					workingCopy = workingCopy.Substring(1);
+				int endIndex = -1;
+				for (int i = 0; i < workingCopy.Length; i++)
+				{
+					if (!char.IsLetter(workingCopy[i]))
+					{
+						endIndex = i;
+						break;
+					}
+				}
+				if (endIndex >= 4)
+				{
+					workingCopy = workingCopy.Remove(endIndex);
+					return SplitByCasing(new string[1] { workingCopy });
+				}
+			}
+			return new string[0];
 		}
 
 		private string[] SplitByCasing(string[] noQualityTokens)
