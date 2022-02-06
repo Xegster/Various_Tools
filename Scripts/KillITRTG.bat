@@ -1,0 +1,1 @@
+Taskkill /IM "Idling to Rule the Gods.exe" /F
