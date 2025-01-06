@@ -6,14 +6,14 @@
 
 <script>
 	
-	import Navigation from './components/Navigation.vue';
+	import Navigation from "./components/Navigation.vue";
 	
-	import { createNamespacedHelpers } from 'vuex';
-	const { mapGetters, mapActions } = createNamespacedHelpers('module');
+	import { createNamespacedHelpers } from "vuex";
+	const { mapGetters, mapActions } = createNamespacedHelpers("module");
 
 
 	export default {
-		name: 'app',
+		name: "app",
 		data: function () {
 			return {
 				exampleData: 0
@@ -63,7 +63,7 @@
 		},
 		filters: {
 			capitalize: function (value) {
-				if (!value) return ''
+				if (!value) return ""
 				value = value.toString()
 				return value.charAt(0).toUpperCase() + value.slice(1)
 			}//{{ message | capitalize }}

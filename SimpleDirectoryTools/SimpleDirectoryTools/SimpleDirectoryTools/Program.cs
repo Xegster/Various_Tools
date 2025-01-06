@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimpleDirectoryTools
 {
@@ -30,10 +27,17 @@ namespace SimpleDirectoryTools
 				{
 					try
 					{
+						Console.WriteLine("Deleting: " + dir);
 						Directory.Delete(dir);
 					}
-					catch (UnauthorizedAccessException) { }
-					catch (DirectoryNotFoundException) { }
+					catch (UnauthorizedAccessException)
+					{
+						Console.WriteLine("No Access!");
+					}
+					catch (DirectoryNotFoundException)
+					{
+						Console.WriteLine("Directory Not Found!");
+					}
 				}
 			}
 			catch (UnauthorizedAccessException) { }
