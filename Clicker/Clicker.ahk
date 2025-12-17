@@ -89,4 +89,65 @@ while(cur_x = end_x && cur_y = end_y)
 }
 return
 
+#t::
+MouseGetPos, initial_x, initial_y
+MouseGetPos, cur_x, cur_y
+start_x := 1020
+start_y := 750
+end_x := 1090
+end_y := 1020
+MouseMove, end_x, end_y
+while(cur_x = end_x && cur_y = end_y)
+{
+	MouseClick, left, start_x, start_y, 1
+	Sleep 100
+	MouseClick, left, end_x, end_y, 1
+	Sleep 100
+	MouseGetPos, cur_x, cur_y
+}
+return
+
+#y::
+MouseGetPos, initial_x, initial_y
+MouseGetPos, cur_x, cur_y
+start_x := 1020
+start_y := 850
+end_x := 1090
+end_y := 1020
+MouseMove, end_x, end_y
+while(cur_x = end_x && cur_y = end_y)
+{
+	MouseClick, left, start_x, start_y, 1
+	Sleep 100
+	MouseClick, left, end_x, end_y, 1
+	Sleep 100
+	MouseGetPos, cur_x, cur_y
+}
+return
+
  
+#i::
+MouseGetPos, begin_x, begin_y
+MouseGetPos, next_x, next_y
+while(begin_x = next_x && begin_y = next_y)
+{
+	MouseClick, left, , , 2
+	MouseClick, right, , , 2
+	MouseGetPos, next_x, next_y
+}
+return
+
+
+
+#k::
+MouseGetPos, begin_x, begin_y
+MouseGetPos, next_x, next_y
+while(begin_x = next_x && begin_y = next_y)
+{
+	Send kys
+	Sleep 1000
+	Send {Enter}
+	MouseGetPos, next_x, next_y
+}
+
+return
