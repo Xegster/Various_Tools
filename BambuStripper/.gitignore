@@ -1,0 +1,4 @@
+# Ignore all files in TestFiles except README.md
+TestFiles/*
+!TestFiles/README.md
+

@@ -201,8 +201,8 @@ namespace BambuStripper
             File.Copy(filePath, backupPath, true);
             Log($"Created backup: {backupPath}");
 
-            // Generate output filename
-            string outputPath = Path.Combine(
+            // Use temporary file path for output (to avoid write lock on original)
+            string tempOutputPath = Path.Combine(
                 Path.GetDirectoryName(filePath) ?? "",
                 Path.GetFileNameWithoutExtension(filePath) + "_modified.3mf"
             );
@@ -210,9 +210,10 @@ namespace BambuStripper
             // Store removed metadata
             var removedMetadata = new List<(string Name, string Value)>();
 
+            // Read from original file and write to temporary file
             using (var archive = ZipFile.Open(filePath, ZipArchiveMode.Read))
             {
-                using (var outputArchive = new ZipArchive(File.Create(outputPath), ZipArchiveMode.Create))
+                using (var outputArchive = new ZipArchive(File.Create(tempOutputPath), ZipArchiveMode.Create))
                 {
                     foreach (var entry in archive.Entries)
                     {
@@ -287,6 +288,18 @@ namespace BambuStripper
                 }
             }
 
+            // Close the read handle before attempting to replace the original file
+            // Now replace the original file: delete original, then rename temp file
+            cancellationToken.ThrowIfCancellationRequested();
+            
+            // Delete the original file
+            File.Delete(filePath);
+            Log($"Deleted original file: {Path.GetFileName(filePath)}");
+            
+            // Rename the temporary file to the original name
+            File.Move(tempOutputPath, filePath);
+            Log($"Renamed temporary file to: {Path.GetFileName(filePath)}");
+
             // Generate HTML file with removed metadata
             if (removedMetadata.Count > 0)
             {
@@ -300,7 +313,7 @@ namespace BambuStripper
             }
 
             Log($"Processing complete!");
-            Log($"Output saved to: {Path.GetFileName(outputPath)}");
+            Log($"File updated: {Path.GetFileName(filePath)}");
             
             // Only show message box for single file processing (not folder processing)
             if (!string.IsNullOrEmpty(_selectedFilePath))
@@ -308,7 +321,7 @@ namespace BambuStripper
                 Dispatcher.Invoke(() =>
                 {
                     MessageBox.Show(
-                        $"File processed successfully!\n\nOutput: {Path.GetFileName(outputPath)}\nBackup: {Path.GetFileName(backupPath)}",
+                        $"File processed successfully!\n\nFile updated: {Path.GetFileName(filePath)}\nBackup: {Path.GetFileName(backupPath)}",
                         "Success",
                         MessageBoxButton.OK,
                         MessageBoxImage.Information
@@ -433,7 +446,7 @@ namespace BambuStripper
             foreach (Match match in urlMatches)
             {
                 string imageUrl = match.Value;
-                string base64Image = GetImageAsBase64FromUrl(imageUrl);
+                string? base64Image = GetImageAsBase64FromUrl(imageUrl);
                 if (!string.IsNullOrEmpty(base64Image))
                 {
                     string imgTag = $"<div class=\"image-container\"><img src=\"data:image/{GetImageExtension(imageUrl)};base64,{base64Image}\" alt=\"Image from {WebUtility.HtmlEncode(imageUrl)}\" /></div>";
@@ -454,7 +467,7 @@ namespace BambuStripper
                     imagePath.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
                     continue;
 
-                string base64Image = GetImageAsBase64FromArchive(original3mfPath, imagePath);
+                string? base64Image = GetImageAsBase64FromArchive(original3mfPath, imagePath);
                 if (!string.IsNullOrEmpty(base64Image))
                 {
                     string imgTag = $"<div class=\"image-container\"><img src=\"data:image/{GetImageExtension(imagePath)};base64,{base64Image}\" alt=\"Image: {WebUtility.HtmlEncode(imagePath)}\" /></div>";
@@ -476,7 +489,7 @@ namespace BambuStripper
             foreach (Match match in imgUrlMatches)
             {
                 string imageUrl = match.Groups[1].Value;
-                string base64Image = GetImageAsBase64FromUrl(imageUrl);
+                string? base64Image = GetImageAsBase64FromUrl(imageUrl);
                 if (!string.IsNullOrEmpty(base64Image))
                 {
                     string dataUri = $"data:image/{GetImageExtension(imageUrl)};base64,{base64Image}";
@@ -496,7 +509,7 @@ namespace BambuStripper
                     continue;
 
                 string imageUrl = match.Value;
-                string base64Image = GetImageAsBase64FromUrl(imageUrl);
+                string? base64Image = GetImageAsBase64FromUrl(imageUrl);
                 if (!string.IsNullOrEmpty(base64Image))
                 {
                     string imgTag = $"<div class=\"image-container\"><img src=\"data:image/{GetImageExtension(imageUrl)};base64,{base64Image}\" alt=\"Image from {WebUtility.HtmlEncode(imageUrl)}\" /></div>";
@@ -522,7 +535,7 @@ namespace BambuStripper
                 if (htmlContent.Substring(startPos, length).Contains("<img", StringComparison.OrdinalIgnoreCase))
                     continue;
 
-                string base64Image = GetImageAsBase64FromArchive(original3mfPath, imagePath);
+                string? base64Image = GetImageAsBase64FromArchive(original3mfPath, imagePath);
                 if (!string.IsNullOrEmpty(base64Image))
                 {
                     string imgTag = $"<div class=\"image-container\"><img src=\"data:image/{GetImageExtension(imagePath)};base64,{base64Image}\" alt=\"Image: {WebUtility.HtmlEncode(imagePath)}\" /></div>";
@@ -558,7 +571,7 @@ namespace BambuStripper
             return text;
         }
 
-        private string GetImageAsBase64FromUrl(string url)
+        private string? GetImageAsBase64FromUrl(string url)
         {
             try
             {
@@ -575,7 +588,7 @@ namespace BambuStripper
             }
         }
 
-        private string GetImageAsBase64FromArchive(string archivePath, string imagePath)
+        private string? GetImageAsBase64FromArchive(string archivePath, string imagePath)
         {
             try
             {
