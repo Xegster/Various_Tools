@@ -8,6 +8,13 @@
     <UseWindowsForms>true</UseWindowsForms>
     <AssemblyName>BambuStripper</AssemblyName>
     <RootNamespace>BambuStripper</RootNamespace>
+    
+    <!-- Publish settings for self-contained single-file executable -->
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <PublishReadyToRun>true</PublishReadyToRun>
   </PropertyGroup>
 
 </Project>

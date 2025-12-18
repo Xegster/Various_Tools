@@ -30,6 +30,46 @@ A simple WPF application for modifying .3MF files. This tool allows you to remov
 
 Or open the project in Visual Studio and press F5.
 
+## Publishing
+
+You can publish the application as a standalone executable. There are two options:
+
+### Self-Contained (With .NET Runtime Bundled)
+
+This creates a single executable file that includes the .NET 8 runtime. The executable is larger (~170 MB) but can run on any Windows x64 machine without requiring .NET to be installed.
+
+1. Open a terminal in the project directory
+2. Run:
+   ```
+   dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
+   ```
+3. The executable will be created at:
+   ```
+   bin\Release\net8.0-windows\win-x64\publish\BambuStripper.exe
+   ```
+
+**Note:** The project file is already configured with these settings, so you can also simply run:
+
+```
+dotnet publish -c Release -r win-x64
+```
+
+### Framework-Dependent (Without .NET Runtime)
+
+This creates a smaller executable (~1-2 MB) that requires .NET 8.0 Runtime to be installed on the target machine.
+
+1. Open a terminal in the project directory
+2. Run:
+   ```
+   dotnet publish -c Release -p:PublishSingleFile=true --self-contained false
+   ```
+3. The executable will be created at:
+   ```
+   bin\Release\net8.0-windows\publish\BambuStripper.exe
+   ```
+
+**Note:** Users will need to have the [.NET 8.0 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0) installed to run this version.
+
 ## Usage
 
 1. Click "Browse..." to select a .3mf file
