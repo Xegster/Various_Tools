@@ -14,24 +14,35 @@
         <!-- File/Folder Selection -->
         <GroupBox Header="File/Folder Selection" Grid.Row="0" Margin="0,0,0,15" Padding="10">
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <TextBox x:Name="FilePathTextBox" Grid.Column="0" 
-                         IsReadOnly="True" 
-                         VerticalContentAlignment="Center"
-                         Padding="5" Margin="0,0,10,0"/>
-                <Button x:Name="BrowseFileButton" Grid.Column="1" 
-                        Content="Browse File..." 
-                        Padding="15,5"
-                        Margin="0,0,5,0"
-                        Click="BrowseFileButton_Click"/>
-                <Button x:Name="BrowseFolderButton" Grid.Column="2" 
-                        Content="Browse Folder..." 
-                        Padding="15,5"
-                        Click="BrowseFolderButton_Click"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="FilePathTextBox" Grid.Column="0" 
+                             IsReadOnly="True" 
+                             VerticalContentAlignment="Center"
+                             Padding="5" Margin="0,0,10,0"/>
+                    <Button x:Name="BrowseFileButton" Grid.Column="1" 
+                            Content="Browse File..." 
+                            Padding="15,5"
+                            Margin="0,0,5,0"
+                            Click="BrowseFileButton_Click"/>
+                    <Button x:Name="BrowseFolderButton" Grid.Column="2" 
+                            Content="Browse Folder..." 
+                            Padding="15,5"
+                            Click="BrowseFolderButton_Click"/>
+                </Grid>
+                <CheckBox x:Name="RecurseSubfoldersCheckBox" 
+                          Grid.Row="1"
+                          Content="Recurse into subfolders" 
+                          Margin="0,10,0,0"
+                          IsEnabled="False"/>
             </Grid>
         </GroupBox>
 

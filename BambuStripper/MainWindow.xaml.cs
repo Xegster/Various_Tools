@@ -63,6 +63,7 @@ namespace BambuStripper
                 _selectedFolderPath = null;
                 FilePathTextBox.Text = _selectedFilePath;
                 RemoveProjectInfoButton.IsEnabled = true;
+                RecurseSubfoldersCheckBox.IsEnabled = false;
                 Log($"Selected file: {Path.GetFileName(_selectedFilePath)}");
             }
         }
@@ -80,6 +81,7 @@ namespace BambuStripper
                     _selectedFilePath = null;
                     FilePathTextBox.Text = _selectedFolderPath;
                     RemoveProjectInfoButton.IsEnabled = true;
+                    RecurseSubfoldersCheckBox.IsEnabled = true;
                     Log($"Selected folder: {_selectedFolderPath}");
                 }
             }
@@ -136,6 +138,7 @@ namespace BambuStripper
                 BrowseFolderButton.IsEnabled = !isProcessing;
                 RemoveProjectInfoButton.IsEnabled = !isProcessing && (!string.IsNullOrEmpty(_selectedFilePath) || !string.IsNullOrEmpty(_selectedFolderPath));
                 ClearButton.IsEnabled = !isProcessing;
+                RecurseSubfoldersCheckBox.IsEnabled = !isProcessing && !string.IsNullOrEmpty(_selectedFolderPath);
                 
                 ProgressBar.Visibility = isProcessing ? Visibility.Visible : Visibility.Collapsed;
                 CancelButton.Visibility = isProcessing ? Visibility.Visible : Visibility.Collapsed;
@@ -145,8 +148,22 @@ namespace BambuStripper
 
         private async Task ProcessFolderAsync(string folderPath, CancellationToken cancellationToken)
         {
-            Log($"Scanning folder for .3mf files...");
-            var files = Directory.GetFiles(folderPath, "*.3mf", SearchOption.TopDirectoryOnly);
+            bool recurseSubfolders = Dispatcher.Invoke(() => RecurseSubfoldersCheckBox.IsChecked == true);
+            SearchOption searchOption = recurseSubfolders ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
+            
+            Log($"Scanning folder for .3mf files{(recurseSubfolders ? " (including subfolders)" : "")}...");
+            var allFiles = Directory.GetFiles(folderPath, "*.3mf", searchOption);
+            
+            // Exclude files in Backup folders
+            var files = allFiles.Where(file =>
+            {
+                string? directory = Path.GetDirectoryName(file);
+                if (directory == null) return true;
+                
+                // Check if any part of the path contains "Backup" as a folder name
+                string[] pathParts = directory.Split(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
+                return !pathParts.Any(part => part.Equals("Backup", StringComparison.OrdinalIgnoreCase));
+            }).ToArray();
             
             if (files.Length == 0)
             {
@@ -154,13 +171,31 @@ namespace BambuStripper
                 return;
             }
 
+            int excludedCount = allFiles.Length - files.Length;
+            if (excludedCount > 0)
+            {
+                Log($"Excluded {excludedCount} file(s) from Backup folder(s)");
+            }
             Log($"Found {files.Length} .3mf file(s)");
             int processed = 0;
+            int skipped = 0;
             int errors = 0;
 
             foreach (var file in files)
             {
                 cancellationToken.ThrowIfCancellationRequested();
+                
+                // Check if corresponding .html file exists (indicates already processed)
+                string fileDirectory = Path.GetDirectoryName(file) ?? "";
+                string htmlFileName = Path.GetFileNameWithoutExtension(file) + ".html";
+                string htmlPath = Path.Combine(fileDirectory, htmlFileName);
+                
+                if (File.Exists(htmlPath))
+                {
+                    Log($"Skipping {Path.GetFileName(file)} - .html file already exists (already processed)");
+                    skipped++;
+                    continue;
+                }
                 
                 try
                 {
@@ -178,9 +213,9 @@ namespace BambuStripper
                 }
             }
 
-            Log($"Folder processing complete! Processed: {processed}, Errors: {errors}");
+            Log($"Folder processing complete! Processed: {processed}, Skipped: {skipped}, Errors: {errors}");
             MessageBox.Show(
-                $"Folder processing complete!\n\nProcessed: {processed} file(s)\nErrors: {errors} file(s)",
+                $"Folder processing complete!\n\nProcessed: {processed} file(s)\nSkipped: {skipped} file(s)\nErrors: {errors} file(s)",
                 "Complete",
                 MessageBoxButton.OK,
                 MessageBoxImage.Information
@@ -189,10 +224,20 @@ namespace BambuStripper
 
         private async Task ProcessFileAsync(string filePath, CancellationToken cancellationToken)
         {
+            // Check if corresponding .html file exists (indicates already processed)
+            string fileDirectory = Path.GetDirectoryName(filePath) ?? "";
+            string htmlFileName = Path.GetFileNameWithoutExtension(filePath) + ".html";
+            string htmlPath = Path.Combine(fileDirectory, htmlFileName);
+            
+            if (File.Exists(htmlPath))
+            {
+                Log($"Skipping {Path.GetFileName(filePath)} - .html file already exists (already processed)");
+                return;
+            }
+            
             Log($"Starting file processing: {Path.GetFileName(filePath)}");
 
             // Create backup in Backup folder
-            string fileDirectory = Path.GetDirectoryName(filePath) ?? "";
             string backupDirectory = Path.Combine(fileDirectory, "Backup");
             Directory.CreateDirectory(backupDirectory);
             
@@ -304,10 +349,7 @@ namespace BambuStripper
             if (removedMetadata.Count > 0)
             {
                 cancellationToken.ThrowIfCancellationRequested();
-                string htmlPath = Path.Combine(
-                    fileDirectory,
-                    Path.GetFileNameWithoutExtension(filePath) + ".html"
-                );
+                // Reuse htmlPath that was already declared at the start of the method
                 await GenerateHtmlFileAsync(htmlPath, removedMetadata, filePath, cancellationToken);
                 Log($"Created HTML file: {Path.GetFileName(htmlPath)}");
             }
