@@ -10,7 +10,7 @@
     <RootNamespace>BambuStripper</RootNamespace>
     
     <!-- Publish settings for self-contained single-file executable -->
-    <SelfContained>true</SelfContained>
+    <SelfContained>false</SelfContained>
     <PublishSingleFile>true</PublishSingleFile>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
