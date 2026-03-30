@@ -5,9 +5,6 @@
 </template>
 
 <script>
-	
-	import Navigation from "./components/Navigation.vue";
-	
 	import { createNamespacedHelpers } from "vuex";
 	const { mapGetters, mapActions } = createNamespacedHelpers("module");
 
@@ -40,8 +37,7 @@
 				get: function () {
 					return 0;
 				},
-				set: function (sel) {
-					let val = sel;
+				set: function () {
 				}
 			},
 			...mapGetters([
@@ -57,7 +53,7 @@
 			])
 		},
 		watch: {
-			exampleData: function (newVal, oldVal) {
+			exampleData: function () {
 
 			}
 		},
@@ -69,7 +65,6 @@
 			}//{{ message | capitalize }}
 		},
 		components: {
-			Navigation,
 		},
 		beforeCreate: function () {
 			
