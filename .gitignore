@@ -287,3 +287,4 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 BambuStripper/Resources/Trash/
+VueTemplate/Template/dist/

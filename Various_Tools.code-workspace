@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"name": "Various Tools"
+		}
+	],
+	"settings": {
+		"files.watcherExclude": {
+			"**/node_modules/**": true,
+			"**/dist/**": true,
+			"**/bin/**": true,
+			"**/obj/**": true
+		},
+		"search.exclude": {
+			"**/node_modules": true,
+			"**/dist": true,
+			"**/bin": true,
+			"**/obj": true,
+			"**/.git": true
+		}
+	}
+}
