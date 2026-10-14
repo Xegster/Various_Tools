@@ -2,12 +2,6 @@
 
 A simple WPF application for modifying .3MF files. This tool allows you to remove metadata, thumbnails, print tickets, and other non-essential content from 3MF files.
 
-If NugeLife is disabled by this project, use this command to reenable it
-
-```
-dotnet nuget enable source "NugeLife"
-```
-
 ## Features
 
 - Remove metadata files (model.rels, [Content_Types].xml modifications)
