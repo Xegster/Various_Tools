@@ -1,6 +1,6 @@
 # PlexManager
 
-Exploration notes for an app that manages Trakt.tv lists and feeds the Radarr/Sonarr queue. **Research only; no code.**
+Exploration notes for an app that manages Trakt.tv lists and feeds the Radarr/Sonarr queue. Research docs 01 to 04 predate the code.
 
 Researched 2026-10-20.
 
@@ -20,3 +20,5 @@ Researched 2026-10-20.
 - **Recommendation:** decide on VIP first. If yes, build a Trakt list editor and let Radarr/Sonarr import lists consume the lists, adding direct push later if needed. If no, build only a Radarr/Sonarr queue/calendar dashboard.
 
 Some details (marked unverified in the docs) need a check against your own Trakt account and Radarr/Sonarr instances.
+
+See [ROADMAP.md](ROADMAP.md) for the plan. Code so far: `TraktBackup` (Trakt export and watchlist cleanup) and `PlexScan` (read-only Plex vs Trakt report). Plex notes: [05-plex-api.md](05-plex-api.md).

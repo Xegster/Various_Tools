@@ -1,0 +1,4 @@
+# Plex token and Radarr/Sonarr API keys
+plexmanager.config.json
+bin/
+obj/

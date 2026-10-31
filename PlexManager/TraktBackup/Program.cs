@@ -11,9 +11,11 @@ try
 {
     // Usage: TraktBackup [output-root]          back up everything (defaults to Backups\ next to trakt.config.json)
     //        TraktBackup clean [--apply]         preview (or perform) the watchlist cleanup; --apply backs up first
+    //        TraktBackup push-movies <csv> [--apply]   add Plex-watched movies (PlexScan CSV) to Trakt history; --apply backs up first
     var config = TraktConfig.Load();
     var cleaning = args.Length > 0 && args[0] == "clean";
-    var root = !cleaning && args.Length > 0 ? args[0] : Path.Combine(TraktConfig.HomeDirectory(), "Backups");
+    var pushing = args.Length > 1 && args[0] == "push-movies";
+    var root = !cleaning && !pushing && args.Length > 0 ? args[0] : Path.Combine(TraktConfig.HomeDirectory(), "Backups");
 
     using var http = new HttpClient();
     http.DefaultRequestHeaders.UserAgent.ParseAdd("TraktBackup/1.0");
@@ -28,6 +30,11 @@ try
     if (cleaning)
     {
         await new WatchlistCleaner(client, TraktConfig.HomeDirectory()).RunAsync(args.Contains("--apply"), Backup, cts.Token);
+    }
+    else if (pushing)
+    {
+        var reports = Path.GetFullPath(Path.Combine(TraktConfig.HomeDirectory(), "..", "Reports"));
+        await new MovieHistoryPusher(client, reports).RunAsync(args[1], args.Contains("--apply"), Backup, cts.Token);
     }
     else
     {
