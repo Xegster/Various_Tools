@@ -11,9 +11,11 @@ Console.CancelKeyPress += (_, e) =>
     cts.Cancel();
 };
 
+const string ExclusionsFile = "plexmanager.exclusions.json";
+
 try
 {
-    // Read-only: compares what Plex says is watched with the latest Trakt backup and writes CSV reports to Reports\.
+    // Read-only: compares what Plex says is watched with the latest Trakt backup and writes CSV reports to a new timestamped folder under Reports\.
     // Usage: PlexScan [trakt-backup-folder]   (defaults to the newest folder in TraktBackup\Backups)
     var config = PlexConfig.Load();
     var home = PlexConfig.HomeDirectory();
@@ -34,7 +36,13 @@ try
     var traktShows = ReadTraktShows(Path.Combine(backup, "history.json"));
     Console.WriteLine($"  Trakt watched movie ids: {traktMovies.Count}, show episode sets: {traktShows.Values.Distinct().Count()}, episodes: {traktShows.Values.Distinct().Sum(v => v.Count)}");
 
-    var reports = Path.Combine(home, "Reports");
+    var excluded = LoadExclusions(home, "excludedShows");
+    var excludedEps = LoadExclusions(home, "excludedEpisodes");
+    Console.WriteLine($"  Excluded shows ({ExclusionsFile}): {string.Join("; ", excluded)}");
+
+    // Each run gets its own folder; Reports\latest.txt holds the newest folder's path (TraktBackup push-* accept "latest").
+    var reportsRoot = Path.Combine(home, "Reports");
+    var reports = Path.Combine(reportsRoot, "scan-" + DateTime.Now.ToString("yyyyMMdd-HHmmss"));
     Directory.CreateDirectory(reports);
 
     // ---- Movies ----
@@ -78,6 +86,9 @@ try
     var showsWithoutIds = new HashSet<string>();
     var showsNotOnTrakt = new SortedDictionary<string, int>();
     var missingByShow = new SortedDictionary<string, List<string>>();
+    var missingNewShows = new SortedDictionary<string, List<string>>();
+    var showIdsByTitle = new Dictionary<string, string>();
+    var excludedEpisodes = 0;
     var plexWatchedEpisodes = 0;
     var episodesOnTrakt = 0;
     foreach (var e in episodes)
@@ -90,6 +101,18 @@ try
         plexWatchedEpisodes++;
         var showKey = e["grandparentRatingKey"]?.GetValue<string>() ?? "";
         var showTitle = showTitles.GetValueOrDefault(showKey, e["grandparentTitle"]?.GetValue<string>() ?? "?");
+        if (excluded.Contains(showTitle))
+        {
+            excludedEpisodes++;
+            continue;
+        }
+
+        if (excludedEps.Contains($"{showTitle}|S{e["parentIndex"]?.GetValue<int>() ?? -1:00}E{e["index"]?.GetValue<int>() ?? -1:00}"))
+        {
+            excludedEpisodes++;
+            continue;
+        }
+
         var keys = showKeys.GetValueOrDefault(showKey) ?? [];
         if (keys.Count == 0)
         {
@@ -103,6 +126,13 @@ try
         if (traktSet == null)
         {
             showsNotOnTrakt[showTitle] = showsNotOnTrakt.GetValueOrDefault(showTitle) + 1;
+            showIdsByTitle[showTitle] = string.Join(" ", keys.OrderBy(k => k, StringComparer.Ordinal));
+            if (!missingNewShows.TryGetValue(showTitle, out var fresh))
+            {
+                missingNewShows[showTitle] = fresh = [];
+            }
+
+            fresh.Add($"S{season:00}E{number:00}|{WatchedAt(e)}");
         }
         else if (traktSet.Contains((season, number)))
         {
@@ -115,6 +145,7 @@ try
                 missingByShow[showTitle] = list = [];
             }
 
+            showIdsByTitle[showTitle] = string.Join(" ", keys.OrderBy(k => k, StringComparer.Ordinal));
             list.Add($"S{season:00}E{number:00}|{WatchedAt(e)}");
         }
     }
@@ -122,8 +153,12 @@ try
     // ---- Output ----
     WriteCsv(Path.Combine(reports, "movies-watched-in-plex-not-trakt.csv"), ["Title", "Year", "Plays", "LastWatchedUtc", "Ids"], missingMovies);
     WriteCsv(Path.Combine(reports, "movies-without-ids.csv"), ["Title", "Year", "File"], unmatchedMovies);
-    WriteCsv(Path.Combine(reports, "episodes-watched-in-plex-not-trakt.csv"), ["Show", "Episode", "LastWatchedUtc"],
-        missingByShow.SelectMany(kv => kv.Value.Select(v => new[] { kv.Key, v.Split('|')[0], v.Split('|')[1] })).ToList());
+    // Every missing episode, whether or not Trakt already has the show. ShowIds feeds TraktBackup push-episodes.
+    WriteCsv(Path.Combine(reports, "episodes-watched-in-plex-not-trakt.csv"), ["Show", "Episode", "LastWatchedUtc", "ShowIds", "ShowOnTrakt"],
+        missingByShow.Select(kv => (kv, onTrakt: "yes")).Concat(missingNewShows.Select(kv => (kv, onTrakt: "no")))
+            .OrderBy(x => x.kv.Key, StringComparer.OrdinalIgnoreCase)
+            .SelectMany(x => x.kv.Value.Select(v => new[] { x.kv.Key, v.Split('|')[0], v.Split('|')[1], showIdsByTitle[x.kv.Key], x.onTrakt }))
+            .ToList());
     WriteCsv(Path.Combine(reports, "shows-in-plex-not-on-trakt.csv"), ["Show", "WatchedEpisodes"],
         showsNotOnTrakt.Select(kv => new[] { kv.Key, kv.Value.ToString() }).ToList());
 
@@ -139,7 +174,9 @@ try
     Console.WriteLine($"  ...MISSING from Trakt (show known):      {missingByShow.Sum(kv => kv.Value.Count)} across {missingByShow.Count} shows");
     Console.WriteLine($"  ...show not in Trakt watched at all:     {showsNotOnTrakt.Values.Sum()} episodes across {showsNotOnTrakt.Count} shows");
     Console.WriteLine($"  ...show has no usable id:                {showsWithoutIds.Count} shows");
+    Console.WriteLine($"  ...excluded by {ExclusionsFile}: {excludedEpisodes} episodes");
     Console.WriteLine();
+    File.WriteAllText(Path.Combine(reportsRoot, "latest.txt"), reports);
     Console.WriteLine($"Reports written to {reports}");
     return 0;
 }
@@ -154,10 +191,26 @@ catch (Exception ex)
     return 1;
 }
 
+static HashSet<string> LoadExclusions(string home, string property)
+{
+    var path = Path.Combine(home, ExclusionsFile);
+    var set = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+    if (File.Exists(path))
+    {
+        foreach (var title in JsonNode.Parse(File.ReadAllText(path))![property]?.AsArray() ?? [])
+        {
+            set.Add(title!.GetValue<string>());
+        }
+    }
+
+    return set;
+}
+
 static string LatestBackup(string home)
 {
     var root = Path.Combine(home, "TraktBackup", "Backups");
-    return Directory.GetDirectories(root).OrderBy(d => d, StringComparer.Ordinal).LastOrDefault()
+    // smart-lists.json is the last file a backup writes, so a folder without it is unfinished or failed.
+    return Directory.GetDirectories(root).Where(d => File.Exists(Path.Combine(d, "smart-lists.json"))).OrderBy(d => d, StringComparer.Ordinal).LastOrDefault()
         ?? throw new DirectoryNotFoundException($"No Trakt backups in {root}. Run TraktBackup first.");
 }
 

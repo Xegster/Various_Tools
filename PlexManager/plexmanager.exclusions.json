@@ -1,0 +1,19 @@
+{
+  "_note": "Shows the user chose not to log on Trakt. PlexScan drops these from every episode report, so they are never pushed. excludedEpisodes (Show|SxxEyy) are episodes Trakt does not recognise (rejected by the 2026-11-03 push: merged finales, specials, numbering differences). Match is on the Plex show title, case-insensitive.",
+  "excludedShows": [
+    "Keeping Up with the Kardashians",
+    "Dance Moms",
+    "America's Next Top Model",
+    "Toddlers & Tiaras"
+  ],
+  "excludedEpisodes": [
+    "Henry Danger|S02E19",
+    "Henry Danger|S03E20",
+    "Lost|S04E14",
+    "Lost|S06E18",
+    "South Park|S27E06",
+    "Swarm|S01E08",
+    "The Sarah Jane Adventures|S01E00",
+    "Doctor Who (2005)|S14E02"
+  ]
+}

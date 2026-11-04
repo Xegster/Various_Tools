@@ -2,3 +2,4 @@
 plexmanager.config.json
 bin/
 obj/
+omdb-cache.json

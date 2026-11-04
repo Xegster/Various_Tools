@@ -159,7 +159,7 @@ public sealed class MovieHistoryPusher
         return rows;
     }
 
-    private static List<string> SplitCsv(string line)
+    internal static List<string> SplitCsv(string line)
     {
         var cells = new List<string>();
         var sb = new StringBuilder();

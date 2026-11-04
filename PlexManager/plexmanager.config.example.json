@@ -1,5 +1,6 @@
 {
-  "plex":   { "baseUrl": "http://192.168.1.6:32400", "token": "" },
-  "sonarr": { "baseUrl": "http://192.168.1.6:8989",  "apiKey": "" },
-  "radarr": { "baseUrl": "http://192.168.1.6:7878",  "apiKey": "" }
+  "plex":   { "baseUrl": "http://192.168.1.12:32400", "token": "" },
+  "sonarr": { "baseUrl": "http://192.168.1.12:8989",  "apiKey": "" },
+  "radarr": { "baseUrl": "http://192.168.1.12:7878",  "apiKey": "" },
+  "omdb":   { "apiKey": "9064782f" }
 }

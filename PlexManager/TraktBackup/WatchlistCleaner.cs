@@ -143,10 +143,10 @@ public sealed class WatchlistCleaner
     private static JsonArray Ids(IEnumerable<Entry> entries) =>
         new(entries.Select(e => (JsonNode)new JsonObject { ["ids"] = new JsonObject { ["trakt"] = e.TraktId } }).ToArray());
 
-    /// <summary>Re-reads both lists from Trakt into Current\ and writes a log of what was removed.</summary>
+    /// <summary>Re-reads both lists from Trakt into a new timestamped folder under Current\ and writes a log of what was removed.</summary>
     private async Task SaveLocalCopyAsync(long listId, List<Removal> plan, CancellationToken ct)
     {
-        var current = Path.Combine(_homeDir, "Current");
+        var current = Path.Combine(_homeDir, "Current", DateTime.Now.ToString("yyyyMMdd-HHmmss"));
         Directory.CreateDirectory(current);
 
         var watchlist = await _client.GetAllAsync("/sync/watchlist", ct);

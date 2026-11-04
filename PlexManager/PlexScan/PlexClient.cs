@@ -2,7 +2,7 @@ using System.Text.Json.Nodes;
 
 namespace PlexScan;
 
-/// <summary>Read-only Plex Media Server client. Requests JSON and pages through library listings.</summary>
+/// <summary>Plex Media Server client. Requests JSON and pages through library listings; PutAsync and DeleteAsync are the only writes and are used by PlexFix.</summary>
 public sealed class PlexClient
 {
     private const int PageSize = 500;
@@ -58,5 +58,23 @@ public sealed class PlexClient
         resp.EnsureSuccessStatusCode();
         var node = JsonNode.Parse(await resp.Content.ReadAsStringAsync(ct));
         return node?["MediaContainer"] ?? throw new InvalidOperationException($"No MediaContainer in response for {pathAndQuery}.");
+    }
+
+    /// <summary>PUT a path (no body), for example a metadata match. Throws on a non-success status.</summary>
+    public async Task PutAsync(string pathAndQuery, CancellationToken ct)
+    {
+        using var req = new HttpRequestMessage(HttpMethod.Put, _config.BaseUrl + pathAndQuery);
+        req.Headers.Add("X-Plex-Token", _config.Token);
+        using var resp = await _http.SendAsync(req, ct);
+        resp.EnsureSuccessStatusCode();
+    }
+
+    /// <summary>DELETE a path, for example a library item (removes the file too when the server allows media deletion). Throws on a non-success status.</summary>
+    public async Task DeleteAsync(string pathAndQuery, CancellationToken ct)
+    {
+        using var req = new HttpRequestMessage(HttpMethod.Delete, _config.BaseUrl + pathAndQuery);
+        req.Headers.Add("X-Plex-Token", _config.Token);
+        using var resp = await _http.SendAsync(req, ct);
+        resp.EnsureSuccessStatusCode();
     }
 }
