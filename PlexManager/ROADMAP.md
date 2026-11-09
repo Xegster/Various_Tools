@@ -188,7 +188,7 @@ This phase deletes Trakt data, so the order matters and nothing is removed until
 
 **Done when:** every in-scope Trakt item is in Radarr/Sonarr (or on the exception list), and the in-scope Trakt lists are empty.
 
-**Closed 2026-11-09.** Run order: `PlexMigrate apply --apply` (359 added, 3 movies failed lookup: Snow: Queen of Darkness, The Rental, The Return of the Killer Klowns from Outer Space; deliberately ignored), `PlexMigrate verify` (only those 3 missing), `move-streaming --apply` (run twice, harmless), `remove-verified --apply` (550). Checked against backup `trakt-20261109-153620`: none of the 550 removed titles and none of the 143 streaming titles remain on the watchlist or Watch list 2. About 50 titles remain on those lists on purpose (watched, rated below 7, already in Plex, or the 3 failures).
+**Closed 2026-11-09.** Run order: `PlexMigrate apply --apply` (359 added, 3 movies failed lookup: Snow: Queen of Darkness, The Rental, The Return of the Killer Klowns from Outer Space; deliberately ignored), `PlexMigrate verify` (only those 3 missing), `move-streaming --apply` (run twice, harmless), `remove-verified --apply` (550). Checked against backup `trakt-20261109-153620`: none of the 550 removed titles and none of the 143 streaming titles remain on the watchlist or Watch list 2. The ~49 titles left on those lists (42 already in Plex, 2 watched, 2 with no id, 3 failed lookups) were then cleared with `TraktBackup remove-leftovers latest --apply` (log `Reports/trakt-list-removal-20261109-160304.csv`, 49 titles).
 
 ### Steps before and during the add (all done by 2026-11-09)
 **Status: Implemented — 2026-11-09**
