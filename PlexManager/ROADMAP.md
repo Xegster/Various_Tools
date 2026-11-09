@@ -9,7 +9,7 @@ Plex runs on another PC on the LAN (Plex Lifetime Pass). Trakt is the account be
 | 0 | Local copy of Trakt | Done |
 | 1 | Plex "watched" is also "watched" in Trakt | Done 2026-11-04: movies and episodes pushed; final scan clean apart from known exceptions; Trakt's Plex sync stays on and PlexScan is the checker |
 | 2 | Delete Plex movies rated below 7/10 | Done 2026-11-04: 53 deleted from Plex (about 54 GB), 52 removed from Radarr with exclusions, 13 kept (`Reports/prune-delete-20261104-203417.csv`) |
-| 3 | Move Trakt movies and series into Radarr/Sonarr, then remove them from Trakt | Not started |
+| 3 | Move Trakt movies and series into Radarr/Sonarr, then remove them from Trakt | Done 2026-11-09: 359 of 362 added (3 movies failed lookup and were left on Trakt), 550 titles removed from Trakt (359 added + 191 already in Radarr), 143 moved to "Watch on Netflix" (45) and "Watch on Prime" (98) |
 
 Phases 1 to 3 run in order. Each later phase relies on the earlier one being trusted: phase 2 deletes files, and phase 3 deletes Trakt data, so neither should run on top of an unverified sync.
 
@@ -46,15 +46,15 @@ Known gaps carried forward:
 
 **Why it needs work:** Trakt syncing (presumably the Plex-to-Trakt scrobbler/sync you have now) is unreliable, so Trakt's watched state cannot be assumed to match Plex. The first step is to measure the gap, not fix it blindly.
 
-### Services on the LAN (192.168.1.12)
+### Services on the LAN (address set once, as `host` in `plexmanager.config.json`)
 
 Reachability checked 2026-10-31 (no credentials needed for these endpoints):
 
 | Service | Address | Result |
 |---|---|---|
-| Plex | `http://192.168.1.12:32400` | Responds, server is claimed, version 1.31.3.6868 |
-| Sonarr | `http://192.168.1.12:8989` | Responds, version 3.0.10.1567 (v3 API) |
-| Radarr | `http://192.168.1.12:7878` | Responds, status OK |
+| Plex | `http://{host}:32400` | Responds, server is claimed, version 1.31.3.6868 |
+| Sonarr | `http://{host}:8989` | Responds, version 3.0.10.1567 (v3 API) |
+| Radarr | `http://{host}:7878` | Responds, status OK |
 
 API keys for Sonarr and Radarr are in place and verified with read-only calls (2026-10-31): Sonarr 3.0.10 with root folder `F:\Plex Media\TV`, Radarr 5.27.5 with root folder `F:\Plex Media\Movies`, about 436 GB free on that drive. The Plex token is in place.
 
@@ -145,6 +145,11 @@ How the push works: `TraktBackup push-episodes <csv> [--apply]` (built 2026-10-3
 - Quality profile: the custom `SD + 720` profile in Radarr and `SD` in Sonarr (looked up by name; the tool stops if it is not found).
 - Movies: **monitored and searched on add** only if released since 2025-01-01 (including not yet released), or if Rotten Tomatoes is 80% or higher (scores come from OMDb by IMDb id; Trakt's API has none). Every other movie is added **unmonitored, no search**.
 - Series: same rule as movies (first aired since 2025-01-01, or Rotten Tomatoes 80% or higher, from OMDb). Those are monitored for the whole series, all seasons, and searched on add; the rest are added unmonitored.
+- Series are judged on release year only (OMDb has no Rotten Tomatoes score for TV; 0 of 73 older series had one).
+- **Decided 2026-11-05:** series whose original language is not English are dropped from the process and removed from the Trakt lists. Language comes from Trakt (`/shows/{id}?extended=full`, field `language`), cached in `trakt-language-cache.json`. 7 of the 77 go (5 Japanese, 1 Korean, 1 Spanish). The plan marks them `remove: original language xx`, and `TraktBackup remove-lists latest [--apply]` removes every row whose Action is blank or starts with `remove:`.
+- Titles available on Netflix or Prime Video (subscription tier, from TMDB watch-provider data) are skipped here and later moved to the Trakt lists "Watch on Netflix" and "Watch on Prime" (step 3d2). Needs `tmdb.apiKey` (and optionally `tmdb.region`, default US) in `plexmanager.config.json`.
+- A blank `Action` cell in the reviewed plan means "just remove this from Trakt": `TraktBackup remove-lists latest [--apply]` removes those from the watchlist and Watch list 2 (backup first). Nothing is added for them.
+- Plan CSVs show an IMDb link in place of the raw IMDb id; `TraktId` stays numeric because the Trakt removal needs it.
 - Built as [PlexMigrate](PlexMigrate/): `PlexMigrate plan` (read-only) writes `Reports/migrate-<timestamp>/migrate-plan.csv`. Not yet run.
 
 Targets: every movie and series in the Trakt account (watchlist, personal lists, and any other category you decide counts) is added to Radarr (movies) or Sonarr (series). After all are confirmed present, remove them from Trakt.
@@ -168,12 +173,30 @@ This phase deletes Trakt data, so the order matters and nothing is removed until
 ### 3d. Verify
 - Re-read Radarr and Sonarr. Every inventory item must be either present in Radarr/Sonarr, already in Plex, or on an explicit exception list (unmatched ids). Produce the exception list for manual handling.
 
+### 3d2. Streaming lists: Netflix and Prime Video (decided 2026-11-05, do not skip)
+- Titles from the watchlist or "Watch list 2" that are available on a subscription on **Netflix** or **Prime Video** are not added to Radarr/Sonarr (the plan marks them `skip: on Netflix` / `skip: on Prime Video`). **Nothing on the Netflix or Prime lists is ever added to Radarr or Sonarr.** They are **moved** instead:
+  - removed from the watchlist and "Watch list 2";
+  - added to two new Trakt lists, **"Watch on Netflix"** and **"Watch on Prime"** (created if missing).
+- A title on both services goes under **Netflix only**. Movies and shows both.
+- Build as `TraktBackup` verbs with the usual rules: dry run first, fresh backup before `--apply`, add to the new list and verify before removing from the old lists, log what moved.
+- Needs the streaming check to run first, which needs the TMDB key (see "Pending before the add step" below).
+
 ### 3e. Remove from Trakt
 - Only items verified in 3d. Use the Trakt remove endpoints (`/sync/watchlist/remove`, `/users/me/lists/{id}/items/remove`) in batches at 1 write per second.
 - Take a fresh backup immediately before. Do not touch history, ratings, or collection unless explicitly chosen in 3a.
 - Existing helpers: `TraktClient` already handles auth and paging; add write methods with the same rate-limit handling.
 
 **Done when:** every in-scope Trakt item is in Radarr/Sonarr (or on the exception list), and the in-scope Trakt lists are empty.
+
+**Closed 2026-11-09.** Run order: `PlexMigrate apply --apply` (359 added, 3 movies failed lookup: Snow: Queen of Darkness, The Rental, The Return of the Killer Klowns from Outer Space; deliberately ignored), `PlexMigrate verify` (only those 3 missing), `move-streaming --apply` (run twice, harmless), `remove-verified --apply` (550). Checked against backup `trakt-20261109-153620`: none of the 550 removed titles and none of the 143 streaming titles remain on the watchlist or Watch list 2. About 50 titles remain on those lists on purpose (watched, rated below 7, already in Plex, or the 3 failures).
+
+### Steps before and during the add (all done by 2026-11-09)
+**Status: Implemented — 2026-11-09**
+1. ~~TMDB API key and streaming country.~~ Done 2026-11-05: key is in `plexmanager.config.json`, region set to **AU** (inferred from your timezone; change `tmdb.region` if wrong).
+2. ~~Re-run `PlexMigrate plan`.~~ Done 2026-11-05 (`Reports/migrate-20261105-015400`): 305 movies and 57 series to add (88 movies and 4 series monitored and searched on add); 130 movies and 13 series skipped as on Netflix or Prime Video; 191 movies already in Radarr; 7 non-English series marked for removal.
+3. ~~Remove the 7 non-English series from Trakt: `TraktBackup remove-lists latest [--apply]`.~~ Done 2026-11-05 (backup `trakt-20261105-012738`, log `Reports/trakt-list-removal-20261105-013018.csv`). A blank `Action` cell also means remove.
+4. Move the Netflix/Prime titles (3d2): `TraktBackup move-streaming latest [--apply]` (built, not yet run). Creates "Watch on Netflix" and "Watch on Prime", checks them, then removes from the watchlist and Watch list 2.
+5. `PlexMigrate apply <plan|latest> [--apply]` built 2026-11-09 (add to Radarr/Sonarr; dry run does lookups only; logs to `Reports/migrate-apply-*.csv`; failures are logged and skipped, Trakt untouched). Not yet run. The Trakt removal (3e) is built 2026-11-09, not yet run: `TraktBackup remove-verified latest [--apply]` removes every title in the latest `migrate-verified-*.csv` from the watchlist and Watch list 2 (dry run by default, fresh backup before `--apply`, log in `Reports/trakt-list-removal-*.csv`). Run `move-streaming` before it. The verify step (3d) is built 2026-11-09, not yet run: `PlexMigrate verify latest` (read-only) re-reads Radarr/Sonarr, checks every `add` and `already in` row is present, and writes `Reports/migrate-verified-*.csv` (safe to remove from Trakt, path in `Reports/latest-verified.txt`) and `Reports/migrate-missing-*.csv` (exceptions). Note the counts in item 2 are only the `add` rows; streaming, already-in-Radarr, watched, rated and in-Plex titles are counted separately.
 
 ---
 
@@ -203,3 +226,17 @@ Today `TraktBackup` is the only project. The new work spans three services, so c
 | Is "Allow media deletion" enabled on the Plex server? | Phase 2 |
 | Radarr/Sonarr root folder, profile, monitored, and search-on-add defaults? | Phase 3 |
 | Disk and bandwidth capacity for the full backlog | Phase 3 |
+
+## Optional
+
+Not needed for the phases above; do these if the tool is kept for the long term.
+
+- **Reusable duplicate-movie remover (added 2026-11-09).** Plex can already filter the Movies library by duplicates, so it can supply the candidates. Build a tool (probably `PlexDedupe`, or a verb on PlexPrune/PlexFix) in the usual two reviewed steps:
+  1. `candidates` (read-only): list every movie with two or more files, with each copy's path, size, resolution, video and audio codec, bitrate, and subtitles. Pick a suggested copy to keep and write a reviewed CSV with a `Keep` column.
+  2. `apply [--apply]`: dry run first. Deletes only the copy not marked `Keep`, one at a time, re-checking the file path before each delete, and logs what was removed.
+  
+  Verifying which copy to keep is the first job of the tool, so the CSV must show enough to decide by hand (quality, size, language, edition). Open points: delete the single media part rather than the whole movie (Plex's `DELETE /library/metadata/{id}/media/{mediaId}` is the likely route, but needs checking against the server's 1.31 API); and whether Radarr's file record needs refreshing afterwards so it does not re-download the deleted copy. Keep it reusable so it can be re-run later as new duplicates appear.
+
+- **Create a UI for this app.** A front end over the PlexScan, PlexFix, PlexPrune, PlexMigrate and TraktBackup verbs, so reviewing plans and running dry runs and `--apply` steps does not need a terminal.
+- **Rewrite all methods to use HTML instead of .csv.** Reports and reviewed lists (candidates, prune list, migrate plan, scan results) would be HTML with the links and review controls built in, instead of CSV files edited in a spreadsheet. The IMDb-link HTML page for the migrate plan is the first step.
+- **Pause and clean up the project.** Collect the repeated helpers (CSV reading and writing, Plex id matching, the per-tool config loading, backup lookup) into one shared project, and merge the five tools' verbs into one CLI. The LAN address is now a single `host` setting; everything else that is duplicated should follow.

@@ -3,3 +3,5 @@ plexmanager.config.json
 bin/
 obj/
 omdb-cache.json
+streaming-cache.json
+trakt-language-cache.json

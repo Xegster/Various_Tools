@@ -4,7 +4,7 @@ Verified against the live server (1.31.3) on 2026-10-31. Read-only so far.
 
 ## Access
 
-- Base URL `http://192.168.1.12:32400`. Send the token as header `X-Plex-Token`. Without it the server returns 401.
+- Base URL `http://{host}:32400` (`host` is set once in `plexmanager.config.json`). Send the token as header `X-Plex-Token`. Without it the server returns 401.
 - Send `Accept: application/json` to get JSON (default is XML). The payload sits under `MediaContainer`; listed items are under `Metadata`.
 - `GET /identity` needs no token. `GET /library/sections` lists libraries.
 

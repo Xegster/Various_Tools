@@ -373,6 +373,6 @@ sealed record RadarrConfig(string BaseUrl, string ApiKey)
         var key = r.GetProperty("apiKey").GetString();
         return string.IsNullOrWhiteSpace(key)
             ? throw new InvalidOperationException("radarr.apiKey is empty in " + PlexConfig.FileName)
-            : new RadarrConfig(r.GetProperty("baseUrl").GetString()!.TrimEnd('/'), key);
+            : new RadarrConfig(PlexConfig.ServiceUrl(doc.RootElement, "radarr"), key);
     }
 }

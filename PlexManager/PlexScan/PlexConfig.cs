@@ -22,7 +22,25 @@ public sealed record PlexConfig(string BaseUrl, string Token)
             throw new InvalidOperationException($"plex.token is empty in {path}.");
         }
 
-        return new PlexConfig(plex.GetProperty("baseUrl").GetString()!.TrimEnd('/'), token);
+        return new PlexConfig(ServiceUrl(doc.RootElement, "plex"), token);
+    }
+
+    /// <summary>
+    /// Base URL of a service: its own "baseUrl" if it has one, otherwise http://{host}:{port} from the single top-level "host"
+    /// and the service's "port", so the LAN address lives in one place.
+    /// </summary>
+    public static string ServiceUrl(JsonElement root, string service)
+    {
+        var section = root.GetProperty(service);
+        if (section.TryGetProperty("baseUrl", out var url) && !string.IsNullOrWhiteSpace(url.GetString()))
+        {
+            return url.GetString()!.TrimEnd('/');
+        }
+
+        var host = root.TryGetProperty("host", out var h) ? h.GetString() : null;
+        return string.IsNullOrWhiteSpace(host)
+            ? throw new InvalidOperationException($"Set \"host\" (the LAN address) at the top of {FileName}, or a baseUrl for {service}.")
+            : $"http://{host}:{section.GetProperty("port").GetInt32()}";
     }
 
     private static string? FindFile()

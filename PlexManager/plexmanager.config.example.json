@@ -1,6 +1,8 @@
 {
-  "plex":   { "baseUrl": "http://192.168.1.12:32400", "token": "" },
-  "sonarr": { "baseUrl": "http://192.168.1.12:8989",  "apiKey": "" },
-  "radarr": { "baseUrl": "http://192.168.1.12:7878",  "apiKey": "" },
-  "omdb":   { "apiKey": "9064782f" }
+  "host":   "192.168.1.9",
+  "plex":   { "port": 32400, "token": "" },
+  "sonarr": { "port": 8989,  "apiKey": "" },
+  "radarr": { "port": 7878,  "apiKey": "" },
+  "omdb":   { "apiKey": "9064782f" },
+  "tmdb":   { "apiKey": "", "region": "AU" }
 }
