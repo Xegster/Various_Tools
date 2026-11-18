@@ -10,6 +10,16 @@ Plex runs on another PC on the LAN (Plex Lifetime Pass). Trakt is the account be
 | 1 | Plex "watched" is also "watched" in Trakt | Done 2026-11-04: movies and episodes pushed; final scan clean apart from known exceptions; Trakt's Plex sync stays on and PlexScan is the checker |
 | 2 | Delete Plex movies rated below 7/10 | Done 2026-11-04: 53 deleted from Plex (about 54 GB), 52 removed from Radarr with exclusions, 13 kept (`Reports/prune-delete-20261104-203417.csv`) |
 | 3 | Move Trakt movies and series into Radarr/Sonarr, then remove them from Trakt | Done 2026-11-09: 359 of 362 added (3 movies failed lookup and were left on Trakt), 550 titles removed from Trakt (359 added + 191 already in Radarr), 143 moved to "Watch on Netflix" (45) and "Watch on Prime" (98) |
+| 4 | One installable program instead of five console tools | Done 2026-11-12: `PlexManager.exe`, a single self-contained exe with a local web UI in a window, a setup wizard, Trakt list pickers instead of hard-coded names, a screen per workflow, and the same verbs on the command line. Plan: [PLAN-exe.md](PLAN-exe.md) |
+
+> **The console tools are gone.** `TraktBackup`, `PlexScan`, `PlexFix`, `PlexPrune` and `PlexMigrate` were
+> replaced by `PlexManager.exe` on 2026-11-12 and removed from the repository; every verb they had moved into
+> `PlexManager.Core` and is reachable from both the window and the command line. The phase write-ups below are
+> the record of how the work was done, so they still describe those tools and link to files that now exist only
+> in git history. Settings moved from `plexmanager.config.json`, `trakt.config.json`, `trakt.tokens.json` and
+> `plexmanager.exclusions.json` into one `settings.json` in `%APPDATA%\PlexManager`, and the hard-coded list
+> names ("Watch list 2", "Watch on Netflix", "Watch on Prime"), quality profiles, library section numbers and
+> cutoffs are now settings. See [README.md](README.md).
 
 Phases 1 to 3 run in order. Each later phase relies on the earlier one being trusted: phase 2 deletes files, and phase 3 deletes Trakt data, so neither should run on top of an unverified sync.
 

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PlexManager</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div id="app">
+    <nav id="sidebar">
+      <div class="brand">PlexManager</div>
+      <a href="#/dashboard" data-screen="dashboard">Dashboard</a>
+      <a href="#/backup" data-screen="backup">Backup</a>
+      <a href="#/scan" data-screen="scan">Plex vs Trakt</a>
+      <a href="#/fix" data-screen="fix">Fix unmatched</a>
+      <a href="#/prune" data-screen="prune">Prune low-rated</a>
+      <a href="#/migrate" data-screen="migrate">Migrate</a>
+      <a href="#/streaming" data-screen="streaming">Streaming lists</a>
+      <a href="#/clean" data-screen="clean">Tidy lists</a>
+      <a href="#/reports" data-screen="reports">Reports</a>
+      <a href="#/settings" data-screen="settings">Settings</a>
+    </nav>
+
+    <main>
+      <header id="statusbar"><span class="muted">Loading...</span></header>
+      <section id="screen"></section>
+    </main>
+
+    <aside id="jobpane" hidden>
+      <div class="jobhead">
+        <strong id="jobtitle"></strong>
+        <span id="jobstate" class="pill"></span>
+        <button id="jobcancel" class="danger small">Cancel</button>
+        <button id="jobclose" class="small">Close</button>
+      </div>
+      <pre id="joblog"></pre>
+    </aside>
+  </div>
+  <script src="app.js" type="module"></script>
+</body>
+</html>

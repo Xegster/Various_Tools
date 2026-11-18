@@ -1,9 +1,0 @@
-# Secrets and tokens
-trakt.config.json
-trakt.tokens.json
-
-# Backups contain personal data
-Backups/
-
-# Latest local copy of the watchlists
-Current/

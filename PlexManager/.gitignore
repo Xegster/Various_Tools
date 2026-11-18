@@ -1,7 +1,15 @@
-# Plex token and Radarr/Sonarr API keys
-plexmanager.config.json
+# Build output
 bin/
 obj/
+
+# Secrets and personal data. The app keeps its own copies in %APPDATA%\PlexManager, outside the repository.
+# The entries below are the old console tools' files, left on disk so the one-time import can still read them
+# (they used to be covered by TraktBackup/.gitignore, which went with those projects).
+plexmanager.config.json
 omdb-cache.json
 streaming-cache.json
 trakt-language-cache.json
+TraktBackup/trakt.config.json
+TraktBackup/trakt.tokens.json
+TraktBackup/Backups/
+TraktBackup/Current/

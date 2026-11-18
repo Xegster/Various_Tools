@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="PlexManager.App/PlexManager.App.csproj" />
+  <Project Path="PlexManager.Core/PlexManager.Core.csproj" />
+</Solution>
